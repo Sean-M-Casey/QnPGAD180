@@ -5345,6 +5345,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79459a707d36c5b4fb1692f93fd91c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1942670072}
+  textEndIcon: {fileID: 1246978350}
+  tutPromptBox: {fileID: 374217429}
+  williamSuspectInfo: {fileID: 0}
+  tutPromptText: {fileID: 1228850501}
+  polterPad: {fileID: 0}
 --- !u!4 &437667211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7994128307818435289, guid: 20eaf6c27ab2c9f4e8720e68660f5f48,
@@ -5445,7 +5451,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16930
+  m_Name: pb_Mesh39784
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -6152,7 +6158,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15930
+  m_Name: pb_Mesh38778
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -12685,6 +12691,12 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 608831567}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &609025640 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7994128307818435290, guid: 20eaf6c27ab2c9f4e8720e68660f5f48,
+    type: 3}
+  m_PrefabInstance: {fileID: 484069379}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &609199159
 GameObject:
   m_ObjectHideFlags: 0
@@ -14934,90 +14946,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949856713}
   m_CullTransparentMesh: 0
---- !u!1001 &953925456
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -14.838
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 12.585
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.127
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0.014690836
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.9998921
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 13
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 1.6840001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.025743378
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.025743378
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035285, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.025743378
-      objectReference: {fileID: 0}
-    - target: {fileID: 6764460187895035287, guid: 335b0d7519f0d0149862f4a8c9a83ca1,
-        type: 3}
-      propertyPath: m_Name
-      value: William_Body_BulletTimeUsInTheHead
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 335b0d7519f0d0149862f4a8c9a83ca1, type: 3}
 --- !u!4 &957761047 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4249883640916440, guid: 4ff51bc5db9471847934886b46b22cc9,
@@ -15278,7 +15206,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh17112
+  m_Name: pb_Mesh39962
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -15970,6 +15898,49 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cedb1b9b2220dc848a321db80705cc4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  letterDelayDefault: 0.05
+  letterDelay: 0.05
+  sentences:
+  - Heck!
+  - "Yep... definitely didn\u2019t think I would be         waking up with tentacles
+    for arms..."
+  - Alright, so what now? Am I dead?
+  - Yeah, I have to be, my skin is blue and        somewhat translucent.
+  - Soooooo the catholics were wrong...
+  - I KNEW IT!!!
+  - But christianity has been debunked in this   one moment of coming into reality
+    of a        ghost then....
+  - Then what is my purpose?!
+  - I am not haunting my family.
+  - However, I could haunt Karen, she is my      least favourite child and complains
+    about   everything.
+  - No! I must find out how I died. I don't know if I was murdered, or just died
+    on the loo.
+  - 'I remember my uncle Neil passed away       from a morning session. Bless his
+    soul. '
+  - Wait, clearly blessing anything of any        nature does not matter anymore.
+  - Did he become a ghost, only to uncover the fact he died in the restroom?
+  - I must find out how I died!
+  - Okay, so can I float through walls?
+  - Maybe I should try running at the wall?
+  - "Alright, so not only am I dead, christianity isn\u2019t real, but as a ghost,
+    I cannot float through walls."
+  - Can I even open doors?
+  - "Pollen is what happens when flowers can\u2019t keep it in their plants."
+  - R.I.P. to water boiling in a kettle, you'll be mist.
+  - Ahhh the bath toy I bought for Karen!
+  - I know a bunch of good jokes about umbrellas but they usually go over people's
+    heads
+  - I gave my kids the childhood I never had. I had a great childhood.
+  - 'At least when I swear at this thing, I am no longer repulsed. '
+  - 'Lil baby billy. Lil william. I''m sorry I left you so early in your life. I
+    hope one day you grow up strong and join the military. '
+  - What shampoo do busts use? Head & Shoulders
+  names:
+  - Lucille
+  chatText: {fileID: 221965626}
+  nameText: {fileID: 125553081}
+  textEndIcon: {fileID: 1246978350}
 --- !u!114 &1031614149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15982,6 +15953,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c634b434f36028468dd4e5f3430ef8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timer: {fileID: 260736763}
+  timerAlert: {fileID: 400758497}
+  timerPause: 0
+  timeRestart: 0
 --- !u!114 &1031614150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15994,6 +15969,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5f172e0eae4c7e498883bc7483e7aaf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1942670072}
+  textBox: {fileID: 519277963}
+  textEndIcon: {fileID: 1246978350}
+  wasdSprites: {fileID: 1560293989}
+  canMoveEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1942670075}
+        m_MethodName: canMoveTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  pauseTimer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1031614149}
+        m_MethodName: timePauseTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  unpauseTimer:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1031614149}
+        m_MethodName: timeUnPauseTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1031614151
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16006,6 +16027,65 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a18987ca07e20f34bb4da84f1b393105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  polterPad: {fileID: 2065304404}
+  polterPadUI: {fileID: 539687370}
+  ppPages:
+  - {fileID: 1658742832}
+  - {fileID: 306603029}
+  - {fileID: 2008168324}
+  - {fileID: 1347352536}
+  - {fileID: 1155440342}
+  - {fileID: 892020942}
+  - {fileID: 84319412}
+  - {fileID: 1619886659}
+  - {fileID: 1369511329}
+  PageUp: {fileID: 1809551123}
+  PageDown: {fileID: 968181595}
+  timer: {fileID: 260736763}
+  timerAlert: {fileID: 400758497}
+  triggerTimePause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1031614149}
+        m_MethodName: timePauseTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  triggerTimeUnPause:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1031614149}
+        m_MethodName: timeUnPauseTrigger
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  mouseLock:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1942670075}
+        m_MethodName: UpdateMouseLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  textBox: {fileID: 519277963}
 --- !u!114 &1031614152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16018,6 +16098,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424706027675af24ea3015a7b7b61dcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1942670072}
+  camera: {fileID: 1715942223}
 --- !u!1001 &1056567695
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17161,11 +17243,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: William_Body
-      objectReference: {fileID: 0}
-    - target: {fileID: 7443325171024150304, guid: 500a6b8ee2763764cbf4971a8fbb05e2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7443325171024150306, guid: 500a6b8ee2763764cbf4971a8fbb05e2,
         type: 3}
@@ -21757,7 +21834,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh15852
+  m_Name: pb_Mesh38700
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -21998,6 +22075,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4072870614460846, guid: ff4af5f67c05f9443a70dac3c2402375,
     type: 3}
   m_PrefabInstance: {fileID: 1695192500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1715942219 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2511248813267173102, guid: 3648cb3fabaa40b48822e9ba15032859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574571188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!20 &1715942223 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 2511248813267173100, guid: 3648cb3fabaa40b48822e9ba15032859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574571188}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1722301451
 GameObject:
@@ -22936,6 +23025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acccdea11d542af4e91f6546bdb58ee7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target: {fileID: 1942670074}
 --- !u!1001 &1763247220
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28249,6 +28339,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30d7fe04e9f06549820b9e3c9afd6b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glimpseItems:
+  - {fileID: 413278419}
+  - {fileID: 609025640}
+--- !u!4 &1942670074 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2511248813080719771, guid: 3648cb3fabaa40b48822e9ba15032859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574571188}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1942670075 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2511248813080719768, guid: 3648cb3fabaa40b48822e9ba15032859,
+    type: 3}
+  m_PrefabInstance: {fileID: 1574571188}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1942670072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43a48e5e42434d4a9920ccc0fd374ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1942670078
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28261,6 +28372,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b802aa81771c245bb47fc7c8add7ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  foyer_kitchen: {fileID: 1191234112}
+  kitchen_foyer: {fileID: 17421759}
+  kitchen_dining: {fileID: 242970395}
+  dining_kitchen: {fileID: 1291575594}
+  dining_foyer: {fileID: 644238166}
+  foyer_dining: {fileID: 1180117794}
+  foyer_laundry: {fileID: 1564946352}
+  laundry_foyer: {fileID: 1314591306}
+  foyer_master: {fileID: 262361954}
+  master_foyer: {fileID: 538247391}
+  foyer_living: {fileID: 9312631}
+  living_foyer: {fileID: 19268411}
+  cam_pos_foyer_dining: {fileID: 1468499267}
+  cam_pos_kitchen: {fileID: 406517752}
+  cam_pos_living: {fileID: 27178464}
+  cam_pos_master: {fileID: 2003182444}
+  cam_pos_laundry: {fileID: 671884010}
+  main_camera: {fileID: 1715942219}
+  player: {fileID: 1942670072}
+  e_Key: {fileID: 249068407}
+  tutPrompt: {fileID: 374217429}
+  tutText: {fileID: 1228850501}
+  inRoom: 
 --- !u!114 &1942670079
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28273,6 +28407,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ff0b063781716b48a94435d948f1b33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  textBox: {fileID: 519277963}
+  iCircles:
+  - {fileID: 355100711}
+  - {fileID: 1827850643}
+  - {fileID: 1449234924}
+  - {fileID: 1023499161}
+  - {fileID: 1382150133}
+  - {fileID: 759659035}
+  - {fileID: 436693428}
+  - {fileID: 2103798929}
+  textEndIcon: {fileID: 1246978350}
+  player: {fileID: 0}
 --- !u!114 &1942670080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28285,6 +28431,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc959c7c941591e459a292703d1b3592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glimpseItems:
+  - {fileID: 606997255}
+  followItems: []
+  keyHoldTime: 3
+  timer: 0
 --- !u!114 &1942670081
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28297,6 +28448,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e0de2f3618411c44bb319d82aa2b274, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  wallTrigger: {fileID: 84114685}
+  wallGlow: {fileID: 556941565}
+  WASD: {fileID: 1560293989}
+  textBox: {fileID: 519277963}
+  player: {fileID: 1942670072}
+  tutPrompts: {fileID: 1551405297}
+  textEndIcon: {fileID: 1246978350}
+  tutPromptText: {fileID: 609199161}
+  tutPromptMsg:
+  - Try to walk through the wall for 5 seconds
+  - Run at wall
 --- !u!4 &1959256878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4958894672300200, guid: 02709f65bbad19149abe93db91845f5a,
@@ -28672,7 +28834,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh16122
+  m_Name: pb_Mesh38970
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
