@@ -21,7 +21,6 @@ public class PlayerControls : MonoBehaviour
         mouseLock = false;
         rigidBody = gameObject.GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
-        mainCamPosZ = -13.38f;
     }
     void Update()
     {
@@ -42,10 +41,6 @@ public class PlayerControls : MonoBehaviour
         else if (!canMove)
         {
             camMoveYes = false;
-        }
-        if (camMoveYes == true)
-        {
-            mainCam.GetComponent<Rigidbody>().AddForce((moveHorizontal * speed) - ((moveHorizontal * speed) / 4), 0, 0);
         }
         
         //Removes velocity when movement keys are released so that player doesnt continue moving
@@ -123,19 +118,7 @@ public class PlayerControls : MonoBehaviour
             wallFlashTrigger = true;
         }
     }
-    private void OnCollisionStay(Collision collide)
-    {
-            rigidBody.velocity = Vector3.zero;
-            rigidBody.angularVelocity = Vector3.zero;
-            mainCam.GetComponent<Rigidbody>().velocity = Vector3.zero;
-            mainCam.GetComponent<Rigidbody>().angularVelocity = Vector3.zero;
-            camMoveYes = false;
-            collisionYes = true;
-    }
-    private void OnCollisionExit(Collision collide)
-    {
-            camMoveYes = true;
-    }
+
     //event trigger that changes state of mouselock
     public void UpdateMouseLock()
     {

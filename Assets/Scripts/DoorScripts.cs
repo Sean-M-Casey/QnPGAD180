@@ -17,7 +17,8 @@ public class DoorScripts : MonoBehaviour
     public GameObject master_foyer;
     public GameObject foyer_living;
     public GameObject living_foyer;
-    public GameObject cam_pos_foyer_dining;
+    public GameObject cam_pos_foyer;
+    public GameObject cam_pos_dining;
     public GameObject cam_pos_kitchen;
     public GameObject cam_pos_living;
     public GameObject cam_pos_master;
@@ -72,7 +73,7 @@ public class DoorScripts : MonoBehaviour
             {
                 player.transform.position = kitchen_foyer.transform.position;
                 inRoom = "Kitchen";
-                main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
+                main_camera.transform.position = cam_pos_kitchen.transform.position;
                 e_Key.SetActive(false);
                 eDown = false;
                 if (!tutprompting)
@@ -85,63 +86,63 @@ public class DoorScripts : MonoBehaviour
             {
                 player.transform.position = foyer_kitchen.transform.position;
                 inRoom = "Foyer";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_foyer.transform.position;
                 eDown = false;
             }
             if (other.name == kitchen_dining.name)
             {
                 player.transform.position = dining_kitchen.transform.position;
                 inRoom = "Dining";
-                main_camera.transform.position = new Vector3(player.transform.position.x, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_dining.transform.position;
                 eDown = false;
             }
             if (other.name == dining_kitchen.name)
             {
                 player.transform.position = kitchen_dining.transform.position;
                 inRoom = "Kitchen";
-                main_camera.transform.position = new Vector3(cam_pos_kitchen.transform.position.x, cam_pos_kitchen.transform.position.y, cam_pos_kitchen.transform.position.z);
+                main_camera.transform.position = cam_pos_kitchen.transform.position;
                 eDown = false;
             }
             if (other.name == dining_foyer.name)
             {
                 player.transform.position = foyer_dining.transform.position;
                 inRoom = "Foyer";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_foyer.transform.position;
                 eDown = false;
             }
             if (other.name == foyer_dining.name)
             {
                 player.transform.position = dining_foyer.transform.position;
                 inRoom = "Dining";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x + 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_dining.transform.position;
                 eDown = false;
             }
             if (other.name == foyer_living.name)
             {
                 player.transform.position = living_foyer.transform.position;
                 inRoom = "Living";
-                main_camera.transform.position = new Vector3(cam_pos_living.transform.position.x + 2, cam_pos_living.transform.position.y, cam_pos_living.transform.position.z);
+                main_camera.transform.position = cam_pos_living.transform.position;
                 eDown = false;
             }
             if (other.name == living_foyer.name)
             {
                 player.transform.position = foyer_living.transform.position;
                 inRoom = "Foyer";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x - 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_foyer.transform.position;
                 eDown = false;
             }
             if (other.name == foyer_master.name)
             {
                 player.transform.position = master_foyer.transform.position;
                 inRoom = "Master";
-                main_camera.transform.position = new Vector3(cam_pos_master.transform.position.x + 3, cam_pos_master.transform.position.y, cam_pos_master.transform.position.z);
+                main_camera.transform.position = cam_pos_master.transform.position;
                 eDown = false;
             }
             if (other.name == master_foyer.name)
             {
                 player.transform.position = foyer_master.transform.position;
                 inRoom = "Foyer";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x - 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_foyer.transform.position;
                 eDown = false;
             }
             if (other.name == foyer_laundry.name)
@@ -155,7 +156,7 @@ public class DoorScripts : MonoBehaviour
             {
                 player.transform.position = foyer_laundry.transform.position;
                 inRoom = "Foyer";
-                main_camera.transform.position = new Vector3(cam_pos_foyer_dining.transform.position.x - 3, cam_pos_foyer_dining.transform.position.y, cam_pos_foyer_dining.transform.position.z);
+                main_camera.transform.position = cam_pos_foyer.transform.position;
                 eDown = false;
             }
         }

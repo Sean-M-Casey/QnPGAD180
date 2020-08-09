@@ -25,7 +25,7 @@ public class CutScene1 : MonoBehaviour
     }
     void Update()
     {
-        if (textTracker == 16 && !finishCutscene)
+        if (textTracker == 15 && !finishCutscene)
         {
             textScript.chatText.text = "";
             unpauseTimer.Invoke();
@@ -34,7 +34,7 @@ public class CutScene1 : MonoBehaviour
             finishCutscene = true;
             //textTracker++;
         }
-        else if (textTracker < 16)
+        else if (textTracker < 15)
         {
             textBox.SetActive(true);
         }
@@ -66,7 +66,7 @@ public class CutScene1 : MonoBehaviour
     IEnumerator Cutscene1()
     {
         yield return new WaitForSeconds(0.07f);
-        if (textTracker < 16)
+        if (textTracker < 15)
         {
             textBox.SetActive(true);
             pauseTimer.Invoke();

@@ -6,7 +6,7 @@ public class InteractionScript : MonoBehaviour
 {
     public GameObject textBox;
     public GameObject[] iCircles;
-    int[] iNums = {19, 20, 21, 22, 23, 24, 25, 26};
+    int[] iNums = {18, 19, 20, 21, 22, 23, 24, 25};
     TextWritingScript textScript;
     public GameObject textEndIcon;
     public GameObject player;

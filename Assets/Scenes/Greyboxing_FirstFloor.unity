@@ -1085,7 +1085,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 27178464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -9.052575, y: 1.41, z: -29.95}
+  m_LocalPosition: {x: -9.61, y: 1.41, z: -29.95}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 76913432}
@@ -1833,6 +1833,7 @@ Transform:
   - {fileID: 27178465}
   - {fileID: 2003182445}
   - {fileID: 671884011}
+  - {fileID: 481735582}
   m_Father: {fileID: 1587093672}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4806,7 +4807,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 406517752}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 22.86, y: 2.27, z: -8.66}
+  m_LocalPosition: {x: 25.97, y: 2.27, z: -8.62}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 76913432}
@@ -5952,6 +5953,36 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 53546452}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &481735581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 481735582}
+  m_Layer: 0
+  m_Name: EGO_Camera_Pos_Dining
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &481735582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 481735581}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 25.63, y: 1.45, z: -24.73}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 76913432}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &484069379
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15906,12 +15937,11 @@ MonoBehaviour:
     for arms..."
   - Alright, so what now? Am I dead?
   - Yeah, I have to be, my skin is blue and        somewhat translucent.
-  - Soooooo the catholics were wrong...
-  - I KNEW IT!!!
-  - But christianity has been debunked in this   one moment of coming into reality
-    of a        ghost then....
-  - Then what is my purpose?!
-  - I am not haunting my family.
+  - "So\u2026what was the point of kneeling for hours, confessing my sins, years
+    of suppressed guilt.."
+  - I KNEW IT WAS A WASTE OF TIME!!!
+  - If I am some floating blob, then what is my purpose?!
+  - 'I am not haunting my family. That is out of the question. '
   - However, I could haunt Karen, she is my      least favourite child and complains
     about   everything.
   - No! I must find out how I died. I don't know if I was murdered, or just died
@@ -15935,7 +15965,6 @@ MonoBehaviour:
   - 'At least when I swear at this thing, I am no longer repulsed. '
   - 'Lil baby billy. Lil william. I''m sorry I left you so early in your life. I
     hope one day you grow up strong and join the military. '
-  - What shampoo do busts use? Head & Shoulders
   names:
   - Lucille
   chatText: {fileID: 221965626}
@@ -19779,7 +19808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1468499268}
   m_Layer: 0
-  m_Name: EGO_Camera_Pos_Foyer_Dining
+  m_Name: EGO_Camera_Pos_Foyer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28384,7 +28413,8 @@ MonoBehaviour:
   master_foyer: {fileID: 538247391}
   foyer_living: {fileID: 9312631}
   living_foyer: {fileID: 19268411}
-  cam_pos_foyer_dining: {fileID: 1468499267}
+  cam_pos_foyer: {fileID: 1468499267}
+  cam_pos_dining: {fileID: 481735581}
   cam_pos_kitchen: {fileID: 406517752}
   cam_pos_living: {fileID: 27178464}
   cam_pos_master: {fileID: 2003182444}
@@ -28457,8 +28487,7 @@ MonoBehaviour:
   textEndIcon: {fileID: 1246978350}
   tutPromptText: {fileID: 609199161}
   tutPromptMsg:
-  - Try to walk through the wall for 5 seconds
-  - Run at wall
+  - Try to float at the wall
 --- !u!4 &1959256878 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4958894672300200, guid: 02709f65bbad19149abe93db91845f5a,

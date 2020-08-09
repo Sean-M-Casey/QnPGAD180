@@ -17,19 +17,19 @@ public class WallMoveScene : MonoBehaviour
     TextWritingScript textScript;
     public string[] tutPromptMsg;
     bool continueOne;
-    int textTracker = 16;
+    int textTracker = 15;
     bool isColliding;
     bool wallFlashHasRun;
     bool wallCollideFirst;
     bool wallRunCollideDone;
-    bool wallCollideComplete;
+    bool wallCollideComplete = false;
+    GameObject tutPrompt1;
     GameObject tutPrompt2;
-    IEnumerator co;
     // Start is called before the first frame update
     void Start()
     {
+        tutPrompt1 = GameObject.Find("TutPromptBox1");
         tutPrompt2 = GameObject.Find("TutPromptBox2");
-        co = WallPrompt1();
         tutPrompts.SetActive(false);
         textScript = GameObject.Find("WorldScriptHolder").GetComponent<TextWritingScript>();
         playerControls = player.GetComponent<PlayerControls>();
@@ -40,10 +40,6 @@ public class WallMoveScene : MonoBehaviour
     void Update()
     {
         if (tutPromptText.text == tutPromptMsg[0])
-        {
-            tutPrompts.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
-        }
-        else if (tutPromptText.text == tutPromptMsg[1])
         {
             tutPrompts.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
         }
@@ -63,23 +59,22 @@ public class WallMoveScene : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (continueOne && textTracker < 17)
+                if (continueOne && textTracker < 16)
                 {
                     textBox.SetActive(false);
                     playerControls.canMove = true;
-                    tutPromptText.text = tutPromptMsg[1];
-                    GameObject.Find("TutPromptBox").SetActive(false);
+                    tutPromptText.text = tutPromptMsg[0];
                     tutPrompt2.SetActive(true);
                     StartCoroutine(WallFlash2());
                 }
-                if (textTracker == 17)
+                if (textTracker == 16)
                 {
                     textBox.SetActive(true);
                     textScript.chatText.text = "";
                     textTracker += 1;
                     textScript.triggerText(textTracker);
                 }
-                if (textTracker == 18 && textScript.chatText.text.Length == textScript.sentences[textTracker].Length)
+                if (textTracker == 17 && textScript.chatText.text.Length == textScript.sentences[textTracker].Length)
                 {
                     textBox.SetActive(false);
                     playerControls.canMove = true;
@@ -88,25 +83,15 @@ public class WallMoveScene : MonoBehaviour
             }
         }
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (!wallCollideFirst)
-        {
-            if (other.name == wallTrigger.name)
-            {
-                wallGlow.GetComponent<Animator>().SetBool("startGlow", false);
-                tutPrompts.SetActive(true);
-                tutPromptText.text = tutPromptMsg[0];
-                wallCollideFirst = true;
-            }
-        }
-    }
     private void OnCollisionEnter(Collision collide)
     {
         if (collide.gameObject.name == "Foyer_Wall 1")
         {
-            isColliding = true;
-            StartCoroutine(co);
+            continueOne = true;
+            playerControls.canMove = false;
+            textBox.SetActive(true);
+            textScript.chatText.text = "";
+            textScript.triggerText(textTracker);
         }
         if (collide.gameObject.name == "Foyer_Wall 3")
         {
@@ -124,28 +109,28 @@ public class WallMoveScene : MonoBehaviour
             }
         }
     }
-    private void OnCollisionExit(Collision collide)
-    {
-        if (collide.gameObject.name == "Foyer_Wall 1")
-        {
-            isColliding = false;
-        }
-    }
-    IEnumerator WallPrompt1()
-    {
-        yield return new WaitForSeconds(5f);
-        if (!continueOne)
-        {
-            if (isColliding)
-            {
-                continueOne = true;
-                playerControls.canMove = false;
-                textBox.SetActive(true);
-                textScript.chatText.text = "";
-                textScript.triggerText(textTracker);
-            }
-        }
-    }
+    //private void OnCollisionExit(Collision collide)
+    //{
+    //    if (collide.gameObject.name == "Foyer_Wall 1")
+    //    {
+    //        isColliding = false;
+    //    }
+    //}
+    //IEnumerator WallPrompt1()
+    //{
+    //    yield return new WaitForSeconds(5f);
+    //    if (!continueOne)
+    //    {
+    //        if (isColliding)
+    //        {
+    //            continueOne = true;
+    //            playerControls.canMove = false;
+    //            textBox.SetActive(true);
+    //            textScript.chatText.text = "";
+    //            textScript.triggerText(textTracker);
+    //        }
+    //    }
+    //}
     IEnumerator DoorFlash()
     {
         GameObject.Find("Foyer_Door_Kitchen").GetComponent<Animator>().SetBool("startGlow", true);
