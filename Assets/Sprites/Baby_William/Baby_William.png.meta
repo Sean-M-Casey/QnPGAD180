@@ -1,0 +1,487 @@
+fileFormatVersion: 2
+guid: d8541dd65953d6549950398c6206ad80
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -199841164516848412
+    second: Baby_William_0
+  - first:
+      213: 7613202454203322424
+    second: William_Arm_R
+  - first:
+      213: -848082557067015428
+    second: William_Mouth_Smile
+  - first:
+      213: 3833899739864355527
+    second: William_Head
+  - first:
+      213: -307657895406531866
+    second: William_Closed_Eye_L
+  - first:
+      213: 4650015478050643682
+    second: William_Closed_Eye_R
+  - first:
+      213: -1946875988412000789
+    second: William_Closed_Iris_L
+  - first:
+      213: -6714887120263366184
+    second: William_Eye_R
+  - first:
+      213: -8269554353471772705
+    second: William_Closed_Iris_R
+  - first:
+      213: 8367091968815374985
+    second: William_Mouth_PreCry
+  - first:
+      213: 4291674018161891367
+    second: Baby_William_10
+  - first:
+      213: 6381819863427499072
+    second: William_Mouth_Crying_Tongue
+  - first:
+      213: -636748651684023621
+    second: William_Body
+  - first:
+      213: 4493069409977114713
+    second: William_Arm_L
+  - first:
+      213: 5852526486903485136
+    second: William_Mouth_Crying
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Baby_William_0
+      rect:
+        serializedVersion: 2
+        x: 2633
+        y: 3631
+        width: 19
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ec097905850a3df0800000000000000
+      internalID: -199841164516848412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Arm_R
+      rect:
+        serializedVersion: 2
+        x: 4875
+        y: 1759
+        width: 1370
+        height: 1497
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 830dbedab4787a960800000000000000
+      internalID: 7613202454203322424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Mouth_Smile
+      rect:
+        serializedVersion: 2
+        x: 338
+        y: 3243
+        width: 481
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cfac0dd58610b34f0800000000000000
+      internalID: -848082557067015428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Head
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 1822
+        width: 1316
+        height: 1704
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -306, y: 852}
+        - {x: -657.3749, y: 401.0652}
+        - {x: -658, y: -620}
+        - {x: -238.67178, y: -851.73114}
+        - {x: 628.4063, y: -851.73114}
+        - {x: 658, y: -841.84064}
+        - {x: 658, y: 311}
+        - {x: 565, y: 531}
+        - {x: 378, y: 721}
+        - {x: 99, y: 852}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c2d313208fb43530800000000000000
+      internalID: 3833899739864355527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Closed_Eye_L
+      rect:
+        serializedVersion: 2
+        x: 2672
+        y: 3375
+        width: 270
+        height: 59
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ea03ff26cafabbf0800000000000000
+      internalID: -307657895406531866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Closed_Eye_R
+      rect:
+        serializedVersion: 2
+        x: 2685
+        y: 3140
+        width: 270
+        height: 56
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eed641c07c288040800000000000000
+      internalID: 4650015478050643682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Closed_Iris_L
+      rect:
+        serializedVersion: 2
+        x: 3140
+        y: 3071
+        width: 53
+        height: 49
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be517f08a9e4bf4e0800000000000000
+      internalID: -1946875988412000789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Eye_R
+      rect:
+        serializedVersion: 2
+        x: 2712
+        y: 2728
+        width: 339
+        height: 323
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d93bd9bdbdefc2a0800000000000000
+      internalID: -6714887120263366184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Closed_Iris_R
+      rect:
+        serializedVersion: 2
+        x: 3144
+        y: 2893
+        width: 49
+        height: 43
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd7a7862124ac3d80800000000000000
+      internalID: -8269554353471772705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Mouth_PreCry
+      rect:
+        serializedVersion: 2
+        x: 111
+        y: 2408
+        width: 550
+        height: 261
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 982a34c90d1ed1470800000000000000
+      internalID: 8367091968815374985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Baby_William_10
+      rect:
+        serializedVersion: 2
+        x: 865
+        y: 2488
+        width: 350
+        height: 339
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 728105008c61f8b30800000000000000
+      internalID: 4291674018161891367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Mouth_Crying_Tongue
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1866
+        width: 1317
+        height: 253
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 044c02c7a57c09850800000000000000
+      internalID: 6381819863427499072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Body
+      rect:
+        serializedVersion: 2
+        x: 1625
+        y: 8
+        width: 3876
+        height: 2448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 522.19525, y: 1222.8828}
+        - {x: -361.3672, y: 1222.8828}
+        - {x: -611.9297, y: 1077.8221}
+        - {x: -1018, y: -5}
+        - {x: -1275, y: -159}
+        - {x: -1349, y: -441}
+        - {x: -1642, y: -272}
+        - {x: -1938, y: -347}
+        - {x: -1937.2734, y: -873.90265}
+        - {x: -1469.1172, y: -1223.367}
+        - {x: 1679.3983, y: -1223.367}
+        - {x: 1938, y: -791.4819}
+        - {x: 1938, y: -399.15878}
+        - {x: 1560.7108, y: -161.78687}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb23a259970d927f0800000000000000
+      internalID: -636748651684023621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Arm_L
+      rect:
+        serializedVersion: 2
+        x: 5522
+        y: 288
+        width: 1218
+        height: 1468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9502cd4b2d69a5e30800000000000000
+      internalID: 4493069409977114713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: William_Mouth_Crying
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1385
+        width: 867
+        height: 423
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d27272f4d9583150800000000000000
+      internalID: 5852526486903485136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 9b7cdf0e439436044a52b4d71c9e430b
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
