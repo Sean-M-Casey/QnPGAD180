@@ -55,7 +55,7 @@ public class DoorScripts : MonoBehaviour
     IEnumerator TutPrompt()
     {
         tutPrompt.SetActive(true);
-        tutText.text = "Press E to interact with Objects";
+        tutText.text = "You can also interact with certain objects";
         yield return new WaitForSeconds(2f);
         tutPrompt.SetActive(false);
         tutText.text = "";
@@ -66,6 +66,8 @@ public class DoorScripts : MonoBehaviour
         {
             e_Key.SetActive(true);
             eKeyRun = true;
+            tutPrompt.SetActive(true);
+            tutText.text = "Press ‘E’ to interact";
         }
         if (eDown)
         {
@@ -76,6 +78,8 @@ public class DoorScripts : MonoBehaviour
                 main_camera.transform.position = cam_pos_kitchen.transform.position;
                 e_Key.SetActive(false);
                 eDown = false;
+                tutPrompt.SetActive(false);
+                tutText.text = "";
                 if (!tutprompting)
                 {
                     StartCoroutine(TutPrompt());

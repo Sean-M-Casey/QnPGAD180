@@ -35,14 +35,14 @@ public class InteractionScript : MonoBehaviour
             {
                 eDown = false;
             }
-            if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
-            {
-                mouseDown = true;
-            }
-            if (Input.GetKeyUp(KeyCode.Mouse0))
-            {
-                mouseDown = false;
-            }
+        }
+        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
+        {
+            mouseDown = true;
+        }
+        if (Input.GetKeyUp(KeyCode.Mouse0))
+        {
+            mouseDown = false;
         }
     }
     private void OnTriggerStay(Collider other)
@@ -103,6 +103,5 @@ public class InteractionScript : MonoBehaviour
         iCircles[arrayTracker].GetComponent<SpriteRenderer>().enabled = false;
         iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_FadeOut", false);
         iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_ClickGreen", false);
-        iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_Idle", false);
     }
 }

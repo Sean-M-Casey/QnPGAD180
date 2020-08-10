@@ -66,6 +66,7 @@ public class WallMoveScene : MonoBehaviour
                     StartCoroutine(WallFlash2());
                     textBox.SetActive(true);
                     textScript.chatText.text = "";
+                    textScript.letterDelay = textScript.letterDelayDefault;
                     textTracker += 1;
                     textScript.triggerText(textTracker);
                 }
@@ -85,6 +86,7 @@ public class WallMoveScene : MonoBehaviour
             tutPrompt1.SetActive(true);
             tutPrompts.SetActive(true);
             tutPromptText.text = tutPromptMsg[0];
+            tutPrompt2.SetActive(false);
         }
     }
     private void OnCollisionEnter(Collision collide)
