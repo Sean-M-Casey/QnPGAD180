@@ -40,7 +40,6 @@ public class CutScene1 : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf == true && textTracker < 15)
         {
-            
             StartCoroutine(Cutscene1());
             textTracker++;
             textScript.chatText.text = "";

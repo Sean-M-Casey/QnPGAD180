@@ -17,7 +17,7 @@ public class WallMoveScene : MonoBehaviour
     TextWritingScript textScript;
     public string[] tutPromptMsg;
     bool continueOne;
-    int textTracker = 15;
+    int textTracker = 0;
     bool isColliding;
     bool wallFlashHasRun;
     bool wallCollideFirst;
@@ -30,7 +30,7 @@ public class WallMoveScene : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        tutPrompt1 = GameObject.Find("TutPromptBox1");
+        tutPrompt1 = GameObject.Find("TutPromptBox");
         tutPrompt2 = GameObject.Find("TutPromptBox2");
         tutPrompts.SetActive(false);
         textScript = GameObject.Find("WorldScriptHolder").GetComponent<TextWritingScript>();
@@ -45,14 +45,6 @@ public class WallMoveScene : MonoBehaviour
         {
             tutPrompts.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
         }
-        if (WASD.activeSelf == false && textBox.activeSelf == false)
-        {
-            StartCoroutine(turnOnFlash());
-            if (wallFlashHasRun)
-            {
-                StartCoroutine(WallFlash());
-            }
-        }
         else
         {
             wallGlow.GetComponent<Animator>().SetBool("startGlow", false);
@@ -61,16 +53,17 @@ public class WallMoveScene : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
-                if (continueOne && textTracker < 16)
+                if (textTracker < 15)
                 {
-                    textBox.SetActive(false);
-                    playerControls.canMove = true;
-                    tutPromptText.text = tutPromptMsg[0];
-                    tutPrompt2.SetActive(true);
+                    textTracker++;
+                }
+                if (textTracker == 15)
+                {
                     StartCoroutine(WallFlash2());
                 }
                 if (textTracker == 16)
                 {
+                    StartCoroutine(WallFlash2());
                     textBox.SetActive(true);
                     textScript.chatText.text = "";
                     textTracker += 1;
@@ -85,23 +78,21 @@ public class WallMoveScene : MonoBehaviour
             }
         }
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.name == "Wall_Trigger")
+        {
+            tutPrompt1.SetActive(true);
+            tutPrompts.SetActive(true);
+            tutPromptText.text = tutPromptMsg[0];
+        }
+    }
     private void OnCollisionEnter(Collision collide)
     {
-        if (collide.gameObject.name == "Foyer_Wall 1" && !runCollideOnce1)
-        {
-            continueOne = true;
-            playerControls.canMove = false;
-            textBox.SetActive(true);
-            textScript.chatText.text = "";
-            textScript.triggerText(textTracker);
-            runCollideOnce1 = true;
-        }
         if (collide.gameObject.name == "Foyer_Wall 3" && !runCollideOnce2)
         {
             if (!wallCollideComplete)
             {
-                //if (wallRunCollideDone)
-                //{
                     tutPrompts.SetActive(false);
                     textScript.chatText.text = "";
                     textTracker += 1;
@@ -109,7 +100,6 @@ public class WallMoveScene : MonoBehaviour
                     textScript.triggerText(textTracker);
                     wallCollideComplete = true;
                     runCollideOnce2 = true;
-                //}
             }
         }
     }
@@ -137,26 +127,14 @@ public class WallMoveScene : MonoBehaviour
     //}
     IEnumerator DoorFlash()
     {
-        GameObject.Find("Foyer_Door_Kitchen").GetComponent<Animator>().SetBool("startGlow", true);
+        GameObject.Find("Kitchen_Door").GetComponent<Animator>().SetBool("startGlow", true);
         yield return new WaitForSeconds(5f);
-        GameObject.Find("Foyer_Door_Kitchen").GetComponent<Animator>().SetBool("startGlow", false);
+        GameObject.Find("Kitchen_Door").GetComponent<Animator>().SetBool("startGlow", false);
     }
     IEnumerator WallFlash2()
     {
         GameObject.Find("Foyer_Wall 3").GetComponent<Animator>().SetBool("startGlow", true);
         yield return new WaitForSeconds(5f);
         GameObject.Find("Foyer_Wall 3").GetComponent<Animator>().SetBool("startGlow", false);
-        wallRunCollideDone = true;
-    }
-    IEnumerator WallFlash()
-    {
-            wallGlow.GetComponent<Animator>().SetBool("startGlow", true);
-            yield return new WaitForSeconds(5f);
-            wallGlow.GetComponent<Animator>().SetBool("startGlow", false);
-    }
-    IEnumerator turnOnFlash()
-    {
-        yield return new WaitForSeconds(1f);
-        wallFlashHasRun = true;
     }
 }

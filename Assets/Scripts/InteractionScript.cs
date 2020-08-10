@@ -25,21 +25,24 @@ public class InteractionScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (textBox.activeSelf == false)
         {
-            eDown = true;
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-            eDown = false;
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
-        {
-            mouseDown = true;
-        }
-        if (Input.GetKeyUp(KeyCode.Mouse0))
-        {
-            mouseDown = false;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                eDown = true;
+            }
+            if (Input.GetKeyUp(KeyCode.E))
+            {
+                eDown = false;
+            }
+            if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
+            {
+                mouseDown = true;
+            }
+            if (Input.GetKeyUp(KeyCode.Mouse0))
+            {
+                mouseDown = false;
+            }
         }
     }
     private void OnTriggerStay(Collider other)
