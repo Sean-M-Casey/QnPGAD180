@@ -38,10 +38,11 @@ public class CutScene1 : MonoBehaviour
         {
             textBox.SetActive(true);
         }
-        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf == true && textTracker <= 15)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf == true && textTracker < 15)
         {
-            textTracker++;
+            
             StartCoroutine(Cutscene1());
+            textTracker++;
             textScript.chatText.text = "";
             textScript.letterDelay = textScript.letterDelayDefault;
             textScript.letterDelay = 0.05f;

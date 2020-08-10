@@ -15953,8 +15953,8 @@ MonoBehaviour:
   - I must find out how I died!
   - Okay, so can I float through walls?
   - Maybe I should try running at the wall?
-  - "Alright, so not only am I dead, christianity isn\u2019t real, but as a ghost,
-    I cannot float through walls."
+  - Alright, so not only am I dead, I wasted my Sunday mornings, but as a ghost,
+    I cannot float through walls.
   - Can I even open doors?
   - "Pollen is what happens when flowers can\u2019t keep it in their plants."
   - R.I.P. to water boiling in a kettle, you'll be mist.
@@ -15969,6 +15969,7 @@ MonoBehaviour:
   - Lucille
   chatText: {fileID: 221965626}
   nameText: {fileID: 125553081}
+  textBox: {fileID: 519277963}
   textEndIcon: {fileID: 1246978350}
 --- !u!114 &1031614149
 MonoBehaviour:

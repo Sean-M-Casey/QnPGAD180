@@ -23,6 +23,8 @@ public class WallMoveScene : MonoBehaviour
     bool wallCollideFirst;
     bool wallRunCollideDone;
     bool wallCollideComplete = false;
+    bool runCollideOnce1 = false;
+    bool runCollideOnce2 = false;
     GameObject tutPrompt1;
     GameObject tutPrompt2;
     // Start is called before the first frame update
@@ -85,15 +87,16 @@ public class WallMoveScene : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collide)
     {
-        if (collide.gameObject.name == "Foyer_Wall 1")
+        if (collide.gameObject.name == "Foyer_Wall 1" && !runCollideOnce1)
         {
             continueOne = true;
             playerControls.canMove = false;
             textBox.SetActive(true);
             textScript.chatText.text = "";
             textScript.triggerText(textTracker);
+            runCollideOnce1 = true;
         }
-        if (collide.gameObject.name == "Foyer_Wall 3")
+        if (collide.gameObject.name == "Foyer_Wall 3" && !runCollideOnce2)
         {
             if (!wallCollideComplete)
             {
@@ -105,6 +108,7 @@ public class WallMoveScene : MonoBehaviour
                     textBox.SetActive(true);
                     textScript.triggerText(textTracker);
                     wallCollideComplete = true;
+                    runCollideOnce2 = true;
                 //}
             }
         }

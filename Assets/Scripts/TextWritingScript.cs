@@ -12,6 +12,7 @@ public class TextWritingScript : MonoBehaviour
     string message;
     public Text chatText;
     public Text nameText;
+    public GameObject textBox;
     public GameObject textEndIcon;
     int arrayTracker;
     // Start is called before the first frame update
@@ -25,6 +26,10 @@ public class TextWritingScript : MonoBehaviour
         {
             textEndIcon.SetActive(false);
         }
+        if (textBox.activeSelf == false)
+        {
+            StopCoroutine(TypeText());
+        }
     }
     public void triggerName(int nameArrayNum)
     {
@@ -32,6 +37,7 @@ public class TextWritingScript : MonoBehaviour
     }
     public void triggerText(int arrayNum)
     {
+        StopCoroutine(TypeText());
         message = sentences[arrayNum];
         arrayTracker = arrayNum;
         StartCoroutine(TypeText());

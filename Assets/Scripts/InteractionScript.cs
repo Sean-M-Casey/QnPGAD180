@@ -78,7 +78,6 @@ public class InteractionScript : MonoBehaviour
                     textScript.triggerText(iNums[i]);
                     iCircles[i].GetComponent<Animator>().SetBool("White_ClickGreen", true);
                     eDown = false;
-               
                 }
             }
         }
