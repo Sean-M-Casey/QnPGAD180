@@ -27,6 +27,7 @@ public class WallMoveScene : MonoBehaviour
     bool runCollideOnce2 = false;
     GameObject tutPrompt1;
     GameObject tutPrompt2;
+    bool triggerOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,12 +82,13 @@ public class WallMoveScene : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "Wall_Trigger")
+        if (other.name == "Wall_Trigger" && !triggerOnce)
         {
             tutPrompt1.SetActive(true);
             tutPrompts.SetActive(true);
             tutPromptText.text = tutPromptMsg[0];
             tutPrompt2.SetActive(false);
+            triggerOnce = true;
         }
     }
     private void OnCollisionEnter(Collision collide)
@@ -105,28 +107,7 @@ public class WallMoveScene : MonoBehaviour
             }
         }
     }
-    //private void OnCollisionExit(Collision collide)
-    //{
-    //    if (collide.gameObject.name == "Foyer_Wall 1")
-    //    {
-    //        isColliding = false;
-    //    }
-    //}
-    //IEnumerator WallPrompt1()
-    //{
-    //    yield return new WaitForSeconds(5f);
-    //    if (!continueOne)
-    //    {
-    //        if (isColliding)
-    //        {
-    //            continueOne = true;
-    //            playerControls.canMove = false;
-    //            textBox.SetActive(true);
-    //            textScript.chatText.text = "";
-    //            textScript.triggerText(textTracker);
-    //        }
-    //    }
-    //}
+    
     IEnumerator DoorFlash()
     {
         GameObject.Find("Kitchen_Door").GetComponent<Animator>().SetBool("startGlow", true);

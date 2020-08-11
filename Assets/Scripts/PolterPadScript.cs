@@ -29,7 +29,7 @@ public class PolterPadScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                if (ppActive == 0)
+                if (ppActive == 0 && polterPadUI.activeSelf)
                 {
                     StartCoroutine(ActivatePP());
                 }

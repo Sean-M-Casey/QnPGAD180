@@ -77,6 +77,7 @@
     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffects.cs" />
     <Compile Include="Assets\AmplifyColor\Plugins\Runtime\VolumeEffectsFlags.cs" />
     <Compile Include="Assets\Scripts\CutScene1.cs" />
+    <Compile Include="Assets\Scripts\Cutscene2.cs" />
     <Compile Include="Assets\Scripts\DoorScripts.cs" />
     <Compile Include="Assets\Scripts\GlimpseInteractions.cs" />
     <Compile Include="Assets\Scripts\GlimpseItems.cs" />

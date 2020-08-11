@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.Events;
 public class DoorScripts : MonoBehaviour
 {
     public GameObject foyer_kitchen;
@@ -29,9 +29,11 @@ public class DoorScripts : MonoBehaviour
     public GameObject tutPrompt;
     public TextMesh tutText;
     public string inRoom;
+    public UnityEvent startCutscene2;
     bool eKeyRun;
     bool tutprompting;
     bool eDown;
+    int reEnterFoyer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +52,19 @@ public class DoorScripts : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.E))
         {
             eDown = false;
+        }
+        if (inRoom == "Kitchen")
+        {
+            reEnterFoyer = 1;
+        }
+        if (inRoom == "Foyer" && reEnterFoyer == 1)
+        {
+            reEnterFoyer = 2;
+        }
+        if (reEnterFoyer == 2)
+        {
+            startCutscene2.Invoke();
+            reEnterFoyer++;
         }
     }
     IEnumerator TutPrompt()

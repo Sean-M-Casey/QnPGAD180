@@ -15,18 +15,24 @@ public class PickupInteractions : MonoBehaviour
     public GameObject stopWatchUI;
     public GameObject polterProp;
     public GameObject stopWatchProp;
+    public GameObject doorIcon;
+    public GameObject tutPrompts;
+    public GameObject tutPrompt1;
+    public TextMesh tutText;
     int arrayTracker;
     int itemsPicked= 0;
     bool playOnce;
     // Start is called before the first frame update
     void Start()
     {
+        doorIcon.SetActive(false);
         textScript = GameObject.Find("WorldScriptHolder").GetComponent<TextWritingScript>();
         for (int i = 0; i < iCircles.Length; i++)
         {
             iCircles[i].GetComponent<SpriteRenderer>().enabled = false;
         }
         polterUI.SetActive(false);
+        iCircles[3].SetActive(true);
     }
 
     // Update is called once per frame
@@ -38,10 +44,10 @@ public class PickupInteractions : MonoBehaviour
             {
                 eDown = true;
             }
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                eDown = false;
-            }
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            eDown = false;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
         {
@@ -75,7 +81,6 @@ public class PickupInteractions : MonoBehaviour
             }
             if (mouseDown)
             {
-                Debug.Log("test");
                 textBox.SetActive(false);
                 textScript.chatText.text = "";
                 iCircles[0].GetComponent<Animator>().SetBool("White_FadeOut", true);
@@ -114,6 +119,30 @@ public class PickupInteractions : MonoBehaviour
                 StartCoroutine(TurnOffAfterAnim());
             }
         }
+        if (other.name == iCircles[2].name)
+        {
+            iCircles[2].GetComponent<SpriteRenderer>().enabled = true;
+            iCircles[2].GetComponent<Animator>().SetBool("White_Idle", true);
+            if (eDown)
+            {
+                GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", true);
+                tutPrompts.SetActive(true);
+                tutPrompt1.SetActive(true);
+                tutText.text = "Hold E on items with yellow rims to glimpse.";
+                iCircles[2].GetComponent<Animator>().SetBool("White_ClickGreen", true);
+                iCircles[3].SetActive(true);
+                eDown = false;
+            }
+        }
+        if (other.name == iCircles[3].name)
+        {
+            iCircles[2].GetComponent<SpriteRenderer>().enabled = true;
+            iCircles[2].GetComponent<Animator>().SetBool("White_Idle", true);
+            if (eDown)
+            {
+                StartCoroutine(BabyBottle());
+            }
+        }
     }
     private void OnTriggerExit(Collider other)
     {
@@ -125,7 +154,63 @@ public class PickupInteractions : MonoBehaviour
                 arrayTracker = i;
                 StartCoroutine(TurnOffAfterAnim());
             }
+            if (other.name == iCircles[2].name)
+            {
+                tutText.text = "";
+                tutPrompts.SetActive(false);
+                tutPrompt1.SetActive(false);
+                GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", false);
+                GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", true);
+                GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", false);
+            }
         }
+    }
+    IEnumerator BabyBottle()
+    {
+        yield return new WaitForSeconds(1f);
+        if (eDown)
+        {
+            yield return new WaitForSeconds(1f);
+            if (eDown)
+            {
+                yield return new WaitForSeconds(1f);
+                if (eDown)
+                {
+                    StartCoroutine(StartGlimpse1());
+                }
+                else
+                {
+                    StopCoroutine(BabyBottle());
+                }
+            }
+            else
+            {
+                StopCoroutine(BabyBottle());
+            }
+        }
+        else
+        {
+            StopCoroutine(BabyBottle());
+        }
+    }
+    IEnumerator StartGlimpse1()
+    {
+        //put animator things for glimpse here \/\/
+
+        yield return new WaitForSeconds(5f);
+        tutPrompts.SetActive(true);
+        tutPrompt1.SetActive(true);
+        tutText.text = "Glimpses are spectral hints. Flash backs to moments";
+        yield return new WaitForSeconds(2f);
+        tutText.text = "Press TAB to open up the polter pad on the suspects tab.";
+        yield return new WaitForSeconds(2f);
+        tutText.text = "Click the Glimpses tab to review hints.";
+        yield return new WaitForSeconds(2f);
+        tutText.text = "Hold space to take glimpse objects with you.";
+        yield return new WaitForSeconds(2f);
+        tutText.text = "";
+        tutPrompts.SetActive(false);
+        tutPrompt1.SetActive(false);
     }
     IEnumerator TurnOffAfterAnim()
     {
@@ -136,6 +221,7 @@ public class PickupInteractions : MonoBehaviour
     }
     void TriggerFoyerSound()
     {
-
+        Debug.Log("playSound");
+        doorIcon.SetActive(true);
     }
 }
