@@ -161,7 +161,7 @@ public class PickupInteractions : MonoBehaviour
                 tutPrompt1.SetActive(false);
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", false);
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", true);
-                GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", false);
+                
             }
         }
     }
@@ -218,6 +218,7 @@ public class PickupInteractions : MonoBehaviour
         iCircles[arrayTracker].GetComponent<SpriteRenderer>().enabled = false;
         iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_FadeOut", false);
         iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_ClickGreen", false);
+        GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", false);
     }
     void TriggerFoyerSound()
     {

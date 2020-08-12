@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Cutscene2 : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class Cutscene2 : MonoBehaviour
     public GameObject textBox;
     public GameObject textEndIcon;
     TextWritingScript textScript;
+    UnityEvent allowbabyBottle;
     int textTracker;
     bool mouseDown;
     // Start is called before the first frame update
@@ -98,7 +100,7 @@ public class Cutscene2 : MonoBehaviour
     }
     void Tutorial2()
     {
-
+        allowbabyBottle.Invoke();
     }
     public void ReEnterFoyer()
     {

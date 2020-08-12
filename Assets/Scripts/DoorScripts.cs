@@ -111,7 +111,7 @@ public class DoorScripts : MonoBehaviour
             if (other.name == kitchen_dining.name)
             {
                 player.transform.position = dining_kitchen.transform.position;
-                inRoom = "Dining";
+                inRoom = "DiningRoom";
                 main_camera.transform.position = cam_pos_dining.transform.position;
                 eDown = false;
             }
@@ -132,7 +132,7 @@ public class DoorScripts : MonoBehaviour
             if (other.name == foyer_dining.name)
             {
                 player.transform.position = dining_foyer.transform.position;
-                inRoom = "Dining";
+                inRoom = "DiningRoom";
                 main_camera.transform.position = cam_pos_dining.transform.position;
                 eDown = false;
             }
@@ -153,7 +153,7 @@ public class DoorScripts : MonoBehaviour
             if (other.name == foyer_master.name)
             {
                 player.transform.position = master_foyer.transform.position;
-                inRoom = "Master";
+                inRoom = "MasterBedroom";
                 main_camera.transform.position = cam_pos_master.transform.position;
                 eDown = false;
             }
