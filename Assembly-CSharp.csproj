@@ -147,46 +147,46 @@
     <None Include="Assets\AmplifyColor\Resources\BlendCache.shader" />
     <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AssetIdRemapUtility">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.AssetIdRemapUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ProBuilder.AddOns.Editor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.ProBuilder.AddOns.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -366,7 +366,7 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.XRModule.dll</HintPath>
     </Reference>
     <Reference Include="AmplifyColor">
-      <HintPath>E:/Unity Projects/Quick and Painless/QnPGAD180/QnPGAD180/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
+      <HintPath>D:/Unity/Quick_and_Painless/Quick and Painless/QnPGAD180/Assets/AmplifyColor/Plugins/AmplifyColor.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/MonoBleedingEdge/lib/mono/4.7.1-api/mscorlib.dll</HintPath>
