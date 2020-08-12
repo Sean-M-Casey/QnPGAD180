@@ -8,8 +8,10 @@ public class Cutscene2 : MonoBehaviour
     bool startCutscene2;
     public GameObject textBox;
     public GameObject textEndIcon;
+    public Animator blackScreen;
     TextWritingScript textScript;
     UnityEvent allowbabyBottle;
+    bool finishBlackout;
     int textTracker;
     bool mouseDown;
     // Start is called before the first frame update
@@ -97,10 +99,43 @@ public class Cutscene2 : MonoBehaviour
             textBox.SetActive(false);
             Tutorial2();
         }
+        if (mouseDown && textTracker == 34)
+        {
+            textTracker++;
+            mouseDown = false;
+            textScript.chatText.text = "";
+            textScript.letterDelay = textScript.letterDelayDefault;
+            textBox.SetActive(true);
+            textScript.triggerText(textTracker);
+        }
+        if (mouseDown && textTracker == 35)
+        {
+            textTracker++;
+            mouseDown = false;
+            textScript.chatText.text = "";
+            textScript.letterDelay = textScript.letterDelayDefault;
+            textBox.SetActive(false);
+            allowbabyBottle.Invoke();
+        }
     }
     void Tutorial2()
     {
-        allowbabyBottle.Invoke();
+        //blackout animation goes here \/\/
+        blackScreen.SetBool("Run_Fader", true);
+        StartCoroutine(TurnOffFader());
+        
+    }
+    IEnumerator TurnOffFader()
+    {
+        yield return new WaitForSeconds(2.5f);
+        blackScreen.SetBool("Run_Fader", false);
+        if (blackScreen.GetCurrentAnimatorStateInfo(0).IsName("Idle") && finishBlackout)
+        {
+            textScript.chatText.text = "";
+            textScript.letterDelay = textScript.letterDelayDefault;
+            textBox.SetActive(true);
+            textScript.triggerText(textTracker);
+        }
     }
     public void ReEnterFoyer()
     {
