@@ -19,6 +19,9 @@ public class PolterPadScript : MonoBehaviour
     int ppActive = 0;
     int ppPage = 0;
     //public Animator triggerPolterPad;
+
+    // Sound effects
+    public AudioSource polterOpen;
     void Start()
     {
         polterPad.SetActive(false);
@@ -42,6 +45,7 @@ public class PolterPadScript : MonoBehaviour
                     triggerTimeUnPause.Invoke();
                     ppActive--;
                     mouseLock.Invoke();
+                    polterOpen.Play();
                 }
             }
         }

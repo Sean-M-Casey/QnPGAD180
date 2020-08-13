@@ -15,13 +15,24 @@ public class CutScene1 : MonoBehaviour
     TextWritingScript textScript;
     int textTracker = 0;
     bool finishCutscene;
-    // Start is called before the first frame update
+
+    //Below is to allow Lucille to poof into existence
+    public ParticleSystem poof;
+    public GameObject lucilleBody;
+    public AudioSource boing;
+
+
+    //Sound effect for the foley click when speeding up text
+    public AudioSource speedClickFoley;
+    public AudioSource ClickFoley;
     void Start()
     {
         wasdSprites.SetActive(false);
         textScript = gameObject.GetComponent<TextWritingScript>();
         textBox.SetActive(false);
         StartCoroutine(Cutscene1());
+        StartCoroutine(PoofStarter());
+
     }
     void Update()
     {
@@ -45,10 +56,13 @@ public class CutScene1 : MonoBehaviour
             textScript.chatText.text = "";
             textScript.letterDelay = textScript.letterDelayDefault;
             textScript.letterDelay = 0.05f;
+            ClickFoley.Play();
+
         }
         else if (Input.GetKeyDown(KeyCode.Mouse0) && textBox.activeSelf == true)
         {
             textScript.letterDelay = 0;
+            speedClickFoley.Play();
         }
         if (wasdSprites.activeSelf == true)
         {
@@ -65,7 +79,7 @@ public class CutScene1 : MonoBehaviour
     }
     IEnumerator Cutscene1()
     {
-        yield return new WaitForSeconds(0.07f);
+        yield return new WaitForSeconds(1.27f); //Was originally 0.07  - changing to 1.27f for the sake of Poof starter
         if (textTracker < 15)
         {
             textBox.SetActive(true);
@@ -79,5 +93,13 @@ public class CutScene1 : MonoBehaviour
         wasdSprites.SetActive(true);
         yield return new WaitForSeconds(2f);
         wasdSprites.SetActive(false);
+    }
+
+    IEnumerator PoofStarter()
+    {
+        poof.Play();
+        boing.Play();
+        yield return new WaitForSeconds(0.2f);
+        lucilleBody.SetActive(true);
     }
 }
