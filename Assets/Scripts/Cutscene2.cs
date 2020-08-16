@@ -9,8 +9,10 @@ public class Cutscene2 : MonoBehaviour
     public GameObject textBox;
     public GameObject textEndIcon;
     public Animator blackScreen;
+    public GameObject stopWatchUI;
+    public GameObject stopWatchUIHandle;
     TextWritingScript textScript;
-    UnityEvent allowbabyBottle;
+    public UnityEvent allowbabyBottle;
     bool finishBlackout;
     int textTracker;
     bool mouseDown;
@@ -98,7 +100,7 @@ public class Cutscene2 : MonoBehaviour
             textScript.letterDelay = textScript.letterDelayDefault;
             textBox.SetActive(false);
             Tutorial2();
-        }
+        }  
         if (mouseDown && textTracker == 34)
         {
             textTracker++;
@@ -123,18 +125,20 @@ public class Cutscene2 : MonoBehaviour
         //blackout animation goes here \/\/
         blackScreen.SetBool("Run_Fader", true);
         StartCoroutine(TurnOffFader());
-        
     }
     IEnumerator TurnOffFader()
     {
         yield return new WaitForSeconds(2.5f);
         blackScreen.SetBool("Run_Fader", false);
-        if (blackScreen.GetCurrentAnimatorStateInfo(0).IsName("Idle") && finishBlackout)
+        stopWatchUI.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
+        stopWatchUIHandle.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
+        if (!finishBlackout)
         {
             textScript.chatText.text = "";
             textScript.letterDelay = textScript.letterDelayDefault;
             textBox.SetActive(true);
             textScript.triggerText(textTracker);
+            finishBlackout = true;
         }
     }
     public void ReEnterFoyer()

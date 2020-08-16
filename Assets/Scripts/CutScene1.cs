@@ -79,7 +79,8 @@ public class CutScene1 : MonoBehaviour
     }
     IEnumerator Cutscene1()
     {
-        yield return new WaitForSeconds(1.27f); //Was originally 0.07  - changing to 1.27f for the sake of Poof starter
+        //yield return new WaitForSeconds(1.27f); //Was originally 0.07  - changing to 1.27f for the sake of Poof starter
+        yield return new WaitForSeconds(0.07f);
         if (textTracker < 15)
         {
             textBox.SetActive(true);
@@ -94,7 +95,6 @@ public class CutScene1 : MonoBehaviour
         yield return new WaitForSeconds(2f);
         wasdSprites.SetActive(false);
     }
-
     IEnumerator PoofStarter()
     {
         poof.Play();

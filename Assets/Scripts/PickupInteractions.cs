@@ -13,6 +13,7 @@ public class PickupInteractions : MonoBehaviour
     public GameObject textEndIcon;
     public GameObject polterUI;
     public GameObject stopWatchUI;
+    public GameObject stopWatchUIHandle;
     public GameObject polterProp;
     public GameObject stopWatchProp;
     public GameObject doorIcon;
@@ -22,6 +23,7 @@ public class PickupInteractions : MonoBehaviour
     int arrayTracker;
     int itemsPicked= 0;
     bool playOnce;
+    bool allowBabyBottleInteract;
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +91,7 @@ public class PickupInteractions : MonoBehaviour
                 polterProp.SetActive(false);
                 arrayTracker = 0;
                 mouseDown = false;
+                eDown = false;
                 StartCoroutine(TurnOffAfterAnim());
             }
         }
@@ -113,32 +116,38 @@ public class PickupInteractions : MonoBehaviour
                 iCircles[1].GetComponent<Animator>().SetBool("White_FadeOut", true);
                 iCircles[1].GetComponent<SpriteRenderer>().enabled = false;
                 stopWatchUI.SetActive(true);
+                stopWatchUI.GetComponent<Animator>().SetBool("Stopwatch_Unpause", false);
+                stopWatchUIHandle.GetComponent<Animator>().SetBool("Stopwatch_Unpause", false);
                 stopWatchProp.SetActive(false);
                 arrayTracker = 1;
                 mouseDown = false;
+                eDown = false;
                 StartCoroutine(TurnOffAfterAnim());
             }
         }
         if (other.name == iCircles[2].name)
         {
-            iCircles[2].GetComponent<SpriteRenderer>().enabled = true;
-            iCircles[2].GetComponent<Animator>().SetBool("White_Idle", true);
-            if (eDown)
+            if (allowBabyBottleInteract)
             {
-                GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", true);
-                tutPrompts.SetActive(true);
-                tutPrompt1.SetActive(true);
-                tutText.text = "Hold E on items with yellow rims to glimpse.";
-                iCircles[2].GetComponent<Animator>().SetBool("White_ClickGreen", true);
-                iCircles[3].SetActive(true);
-                eDown = false;
+                iCircles[2].GetComponent<SpriteRenderer>().enabled = true;
+                iCircles[2].GetComponent<Animator>().SetBool("White_Idle", true);
+                if (eDown)
+                {
+                    GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", true);
+                    tutPrompts.SetActive(true);
+                    tutPrompt1.SetActive(true);
+                    tutText.text = "Hold E on items with yellow rims to glimpse.";
+                    iCircles[3].GetComponent<SpriteRenderer>().enabled = true;
+                    iCircles[2].GetComponent<Animator>().SetBool("White_ClickGreen", true);
+                    iCircles[3].SetActive(true);
+                    eDown = false;
+                }
             }
         }
         if (other.name == iCircles[3].name)
         {
-            iCircles[2].GetComponent<SpriteRenderer>().enabled = true;
-            iCircles[2].GetComponent<Animator>().SetBool("White_Idle", true);
-            if (eDown)
+            iCircles[2].GetComponent<SpriteRenderer>().enabled = false;
+            if (eDown && iCircles[2].GetComponent<SpriteRenderer>().enabled == false)
             {
                 StartCoroutine(BabyBottle());
             }
@@ -161,21 +170,27 @@ public class PickupInteractions : MonoBehaviour
                 tutPrompt1.SetActive(false);
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", false);
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", true);
-                
             }
         }
     }
     IEnumerator BabyBottle()
     {
+        Debug.Log("start time");
         yield return new WaitForSeconds(1f);
         if (eDown)
         {
+            Debug.Log("start time 1");
             yield return new WaitForSeconds(1f);
             if (eDown)
             {
+                Debug.Log("start time 2");
                 yield return new WaitForSeconds(1f);
                 if (eDown)
                 {
+                    iCircles[3].GetComponent<Animator>().SetBool("White_ClickGreen", true);
+                    iCircles[3].GetComponent<Animator>().SetBool("White_FadeOut", true);
+                    StartCoroutine(TurnOffAfterAnim());
+                    Debug.Log("tester");
                     StartCoroutine(StartGlimpse1());
                 }
                 else
@@ -219,10 +234,15 @@ public class PickupInteractions : MonoBehaviour
         iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_FadeOut", false);
         iCircles[arrayTracker].GetComponent<Animator>().SetBool("White_ClickGreen", false);
         GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", false);
+        eDown = false;
     }
     void TriggerFoyerSound()
     {
         Debug.Log("playSound");
         doorIcon.SetActive(true);
+    }
+    public void allowBaby()
+    {
+        allowBabyBottleInteract = true;
     }
 }
