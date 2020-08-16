@@ -24,6 +24,7 @@ public class PickupInteractions : MonoBehaviour
     int itemsPicked= 0;
     bool playOnce;
     bool allowBabyBottleInteract;
+    bool fridgeFirst;
     // Start is called before the first frame update
     void Start()
     {
@@ -141,13 +142,13 @@ public class PickupInteractions : MonoBehaviour
                     iCircles[2].GetComponent<Animator>().SetBool("White_ClickGreen", true);
                     iCircles[3].SetActive(true);
                     eDown = false;
+                    StartCoroutine(FridgeFirst());
                 }
             }
         }
         if (other.name == iCircles[3].name)
         {
-            iCircles[2].GetComponent<SpriteRenderer>().enabled = false;
-            if (eDown && iCircles[2].GetComponent<SpriteRenderer>().enabled == false)
+            if (eDown && fridgeFirst)
             {
                 StartCoroutine(BabyBottle());
             }
@@ -173,35 +174,22 @@ public class PickupInteractions : MonoBehaviour
             }
         }
     }
+    IEnumerator FridgeFirst()
+    {
+        yield return new WaitForSeconds(0.5f);
+        fridgeFirst = true;
+    }
     IEnumerator BabyBottle()
     {
         Debug.Log("start time");
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(3f);
         if (eDown)
         {
-            Debug.Log("start time 1");
-            yield return new WaitForSeconds(1f);
-            if (eDown)
-            {
-                Debug.Log("start time 2");
-                yield return new WaitForSeconds(1f);
-                if (eDown)
-                {
-                    iCircles[3].GetComponent<Animator>().SetBool("White_ClickGreen", true);
-                    iCircles[3].GetComponent<Animator>().SetBool("White_FadeOut", true);
-                    StartCoroutine(TurnOffAfterAnim());
-                    Debug.Log("tester");
-                    StartCoroutine(StartGlimpse1());
-                }
-                else
-                {
-                    StopCoroutine(BabyBottle());
-                }
-            }
-            else
-            {
-                StopCoroutine(BabyBottle());
-            }
+            iCircles[3].GetComponent<Animator>().SetBool("White_ClickGreen", true);
+            iCircles[3].GetComponent<Animator>().SetBool("White_FadeOut", true);
+            StartCoroutine(TurnOffAfterAnim());
+            Debug.Log("tester");
+            StartCoroutine(StartGlimpse1());
         }
         else
         {
