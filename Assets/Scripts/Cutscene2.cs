@@ -16,10 +16,16 @@ public class Cutscene2 : MonoBehaviour
     bool finishBlackout;
     int textTracker;
     bool mouseDown;
+
+    //The Below Variables allow for Victoria to spawn in, and leave the house
+    public GameObject victoria;
+    bool victoriaAnimationDone;
+    
     // Start is called before the first frame update
     void Start()
     {
         textScript = gameObject.GetComponent<TextWritingScript>();
+        victoriaAnimationDone = false;
     }
 
     // Update is called once per frame
@@ -38,7 +44,7 @@ public class Cutscene2 : MonoBehaviour
         {
             mouseDown = false;
         }
-        if (mouseDown && textTracker == 27)
+        if (mouseDown && textTracker == 27 && victoriaAnimationDone == true)
         {
             textTracker++;
             textScript.chatText.text = "";
@@ -146,11 +152,16 @@ public class Cutscene2 : MonoBehaviour
     public void ReEnterFoyer()
     {
         startCutscene2 = true;
+        Debug.Log("pleasestart");
     }
     IEnumerator CutScene2()
     {
+        Debug.Log("please");
         textTracker = 27;
-        yield return new WaitForSeconds(4f);
+        victoria.SetActive(true);;
+        yield return new WaitForSeconds(2f);
+        victoriaAnimationDone = true;
+        victoria.SetActive(false);
         textScript.chatText.text = "";
         textBox.SetActive(true);
         textScript.triggerText(textTracker);

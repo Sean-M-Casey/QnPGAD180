@@ -13,7 +13,7 @@ public class CutScene1 : MonoBehaviour
     public UnityEvent pauseTimer;
     public UnityEvent unpauseTimer;
     TextWritingScript textScript;
-    int textTracker = 0;
+    public int textTracker = 0;
     bool finishCutscene;
 
     //Below is to allow Lucille to poof into existence
