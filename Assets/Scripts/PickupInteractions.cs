@@ -19,6 +19,7 @@ public class PickupInteractions : MonoBehaviour
     public GameObject doorIcon;
     public GameObject tutPrompts;
     public GameObject tutPrompt1;
+    public GameObject bottleGlimpse;
     public TextMesh tutText;
     int arrayTracker;
     int itemsPicked= 0;
@@ -134,15 +135,18 @@ public class PickupInteractions : MonoBehaviour
                 iCircles[2].GetComponent<Animator>().SetBool("White_Idle", true);
                 if (eDown)
                 {
-                    GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", true);
-                    tutPrompts.SetActive(true);
-                    tutPrompt1.SetActive(true);
-                    tutText.text = "Hold E on items with yellow rims to glimpse.";
-                    iCircles[3].GetComponent<SpriteRenderer>().enabled = true;
-                    iCircles[2].GetComponent<Animator>().SetBool("White_ClickGreen", true);
-                    iCircles[3].SetActive(true);
-                    eDown = false;
-                    StartCoroutine(FridgeFirst());
+                    if (fridgeFirst == false)
+                    {
+                        GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", true);
+                        tutPrompts.SetActive(true);
+                        tutPrompt1.SetActive(true);
+                        tutText.text = "Hold E on items with yellow rims to glimpse.";
+                        iCircles[3].GetComponent<SpriteRenderer>().enabled = true;
+                        iCircles[2].GetComponent<Animator>().SetBool("White_ClickGreen", true);
+                        iCircles[3].SetActive(true);
+                        eDown = false;
+                        StartCoroutine(FridgeFirst());
+                    }
                 }
             }
         }
@@ -171,6 +175,7 @@ public class PickupInteractions : MonoBehaviour
                 tutPrompt1.SetActive(false);
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Open", false);
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", true);
+                fridgeFirst = false;
             }
         }
     }
@@ -181,14 +186,12 @@ public class PickupInteractions : MonoBehaviour
     }
     IEnumerator BabyBottle()
     {
-        Debug.Log("start time");
         yield return new WaitForSeconds(3f);
         if (eDown)
         {
             iCircles[3].GetComponent<Animator>().SetBool("White_ClickGreen", true);
             iCircles[3].GetComponent<Animator>().SetBool("White_FadeOut", true);
             StartCoroutine(TurnOffAfterAnim());
-            Debug.Log("tester");
             StartCoroutine(StartGlimpse1());
         }
         else
@@ -198,19 +201,23 @@ public class PickupInteractions : MonoBehaviour
     }
     IEnumerator StartGlimpse1()
     {
-        //put animator things for glimpse here \/\/
-
+        bottleGlimpse.SetActive(true);
         yield return new WaitForSeconds(5f);
+        bottleGlimpse.SetActive(false);
         tutPrompts.SetActive(true);
         tutPrompt1.SetActive(true);
+        tutPrompt1.transform.localScale = new Vector3(1.0934296f, 0.196026f, 0.3013142f);
+        tutText.transform.position = new Vector3(tutText.transform.position.x - 0.045f, tutText.transform.position.y, tutText.transform.position.z - 0.01f);
         tutText.text = "Glimpses are spectral hints. Flash backs to moments";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         tutText.text = "Press TAB to open up the polter pad on the suspects tab.";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         tutText.text = "Click the Glimpses tab to review hints.";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         tutText.text = "Hold space to take glimpse objects with you.";
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
+        GameObject.Find("Lucille").GetComponent<PlayerControls>().canMove = true;
+        tutPrompt1.transform.localScale = new Vector3(0.7834296f, 0.196026f, 0.3013142f);
         tutText.text = "";
         tutPrompts.SetActive(false);
         tutPrompt1.SetActive(false);

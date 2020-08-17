@@ -34,6 +34,7 @@ public class DoorScripts : MonoBehaviour
     bool tutprompting;
     bool eDown;
     int reEnterFoyer = 0;
+    bool kitchenOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -53,9 +54,10 @@ public class DoorScripts : MonoBehaviour
         {
             eDown = false;
         }
-        if (inRoom == "Kitchen")
+        if (inRoom == "Kitchen" && kitchenOnce == false)
         {
             reEnterFoyer = 1;
+            kitchenOnce = true;
         }
         if (inRoom == "Foyer" && reEnterFoyer == 1)
         {

@@ -46,6 +46,7 @@ public class Cutscene2 : MonoBehaviour
             textBox.SetActive(true);
             textScript.triggerText(textTracker);
             mouseDown = false;
+            GameObject.Find("Lucille").GetComponent<PlayerControls>().canMove = false;
         }
         if (mouseDown && textTracker == 28)
         {
@@ -118,6 +119,7 @@ public class Cutscene2 : MonoBehaviour
             textScript.letterDelay = textScript.letterDelayDefault;
             textBox.SetActive(false);
             allowbabyBottle.Invoke();
+            GameObject.Find("Lucille").GetComponent<PlayerControls>().canMove = true;
         }
     }
     void Tutorial2()

@@ -44,7 +44,7 @@ public class WallMoveScene : MonoBehaviour
     {
         if (tutPromptText.text == tutPromptMsg[0])
         {
-            tutPrompts.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z);
+            tutPrompts.transform.position = new Vector3(player.transform.position.x, player.transform.position.y + 2, player.transform.position.z - 4);
         }
         else
         {
