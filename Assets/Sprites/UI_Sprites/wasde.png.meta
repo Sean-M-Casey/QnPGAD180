@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 2e0861acc1567c945aa7bbe386028c84
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6167252129113077621
+    second: wasde_w
+  - first:
+      213: 5275732800989715381
+    second: wasde_e
+  - first:
+      213: 2483740835298451222
+    second: wasde_a
+  - first:
+      213: -5788107540342574129
+    second: wasde_d
+  - first:
+      213: -8365517376553649207
+    second: wasde_s
+  - first:
+      213: 7751038324450879058
+    second: wasde_5
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: 0
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: wasde_w
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 274
+        width: 260
+        height: 244
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8881f33dd4896aa0800000000000000
+      internalID: -6167252129113077621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasde_e
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 457
+        width: 256
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5bb5edcc70b273940800000000000000
+      internalID: 5275732800989715381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasde_a
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 28
+        width: 256
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61f981a5125087220800000000000000
+      internalID: 2483740835298451222
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasde_d
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 28
+        width: 248
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc3fe18dbd28cafa0800000000000000
+      internalID: -5788107540342574129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: wasde_s
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 27
+        width: 250
+        height: 247
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb7928b446b7eb80800000000000000
+      internalID: -8365517376553649207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline:
+    - - {x: -314, y: 162}
+      - {x: -413, y: 104}
+      - {x: -413, y: -332}
+      - {x: 339, y: -332}
+      - {x: 339, y: -69}
+      - {x: 127, y: 164}
+    - - {x: -419, y: -118}
+      - {x: -416, y: -117}
+      - {x: -416, y: -114}
+      - {x: -419, y: -113}
+      - {x: -421, y: -115}
+    - - {x: 202, y: 346}
+      - {x: 202, y: 109}
+      - {x: 247, y: 97}
+      - {x: 454, y: 97}
+      - {x: 454, y: 346}
+    - - {x: -155, y: 266}
+      - {x: -182, y: 293}
+      - {x: -207, y: 282}
+      - {x: -206, y: 240}
+      - {x: -176, y: 209}
+    - - {x: 196, y: 311}
+      - {x: 199, y: 312}
+      - {x: 199, y: 315}
+      - {x: 196, y: 316}
+      - {x: 194, y: 314}
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
