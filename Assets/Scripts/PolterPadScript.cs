@@ -63,7 +63,8 @@ public class PolterPadScript : MonoBehaviour
     }
     public void UpArrow()
     {
-            ppPage++;
+        Debug.Log("fuck you");    
+        ppPage++;
             ppPages[ppPage - 1].SetActive(false);
             ppPages[ppPage].SetActive(true);
         if (ppPage == 1 || ppPage == 5 || ppPage == 7 || ppPage == 8)

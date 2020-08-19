@@ -31,10 +31,10 @@ public class InteractionScript : MonoBehaviour
             {
                 eDown = true;
             }
-            if (Input.GetKeyUp(KeyCode.E))
-            {
-                eDown = false;
-            }
+        }
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            eDown = false;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
         {

@@ -20,12 +20,17 @@ public class PickupInteractions : MonoBehaviour
     public GameObject tutPrompts;
     public GameObject tutPrompt1;
     public GameObject bottleGlimpse;
+    public GameObject babyBottle;
+    public GameObject player;
     public TextMesh tutText;
     int arrayTracker;
     int itemsPicked= 0;
     bool playOnce;
     bool allowBabyBottleInteract;
     bool fridgeFirst;
+    bool pickupBottle;
+    bool spaceDown;
+    bool bottleFollow;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,14 +49,23 @@ public class PickupInteractions : MonoBehaviour
     {
         if (textBox.activeSelf == false)
         {
+            
             if (Input.GetKeyDown(KeyCode.E))
             {
                 eDown = true;
+            }
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                spaceDown = true;
             }
         }
         if (Input.GetKeyUp(KeyCode.E))
         {
             eDown = false;
+        }
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            spaceDown = false;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0) && textEndIcon.activeSelf)
         {
@@ -65,6 +79,10 @@ public class PickupInteractions : MonoBehaviour
         {
             TriggerFoyerSound();
             playOnce = !playOnce;
+        }
+        if (bottleFollow)
+        {
+            babyBottle.transform.position = new Vector3(player.transform.position.x + 1, player.transform.position.y, player.transform.position.z);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -156,6 +174,10 @@ public class PickupInteractions : MonoBehaviour
             {
                 StartCoroutine(BabyBottle());
             }
+            if (spaceDown && pickupBottle)
+            {
+                StartCoroutine(PickupBottle());
+            }
         }
     }
     private void OnTriggerExit(Collider other)
@@ -177,6 +199,22 @@ public class PickupInteractions : MonoBehaviour
                 GameObject.Find("SM_Prop_Kitchen_Fridge_01").GetComponent<Animator>().SetBool("Is_Closed", true);
                 fridgeFirst = false;
             }
+            if (other.name == iCircles[3].name)
+            {
+                fridgeFirst = false;
+            }
+        }
+    }
+    IEnumerator PickupBottle()
+    {
+        Debug.Log("Testing1");
+        yield return new WaitForSeconds(3f);
+        if (spaceDown) {
+            iCircles[3].SetActive(false);
+            bottleFollow = true;
+        }
+        else {
+            StopCoroutine(PickupBottle());
         }
     }
     IEnumerator FridgeFirst()
@@ -221,6 +259,7 @@ public class PickupInteractions : MonoBehaviour
         tutText.text = "";
         tutPrompts.SetActive(false);
         tutPrompt1.SetActive(false);
+        pickupBottle = true;
     }
     IEnumerator TurnOffAfterAnim()
     {
