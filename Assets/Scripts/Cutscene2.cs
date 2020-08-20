@@ -17,6 +17,8 @@ public class Cutscene2 : MonoBehaviour
     int textTracker;
     bool mouseDown;
 
+    CutScene1 poofs;
+
     //The Below Variables allow for Victoria to spawn in, and leave the house
     public GameObject victoria;
     bool victoriaAnimationDone;
@@ -26,6 +28,7 @@ public class Cutscene2 : MonoBehaviour
     {
         textScript = gameObject.GetComponent<TextWritingScript>();
         victoriaAnimationDone = false;
+        poofs = GameObject.Find("WorldScriptHolder").GetComponent<CutScene1>();
     }
 
     // Update is called once per frame
@@ -133,6 +136,7 @@ public class Cutscene2 : MonoBehaviour
         //blackout animation goes here \/\/
         blackScreen.SetBool("Run_Fader", true);
         StartCoroutine(TurnOffFader());
+
     }
     IEnumerator TurnOffFader()
     {
@@ -166,4 +170,5 @@ public class Cutscene2 : MonoBehaviour
         textBox.SetActive(true);
         textScript.triggerText(textTracker);
     }
+
 }

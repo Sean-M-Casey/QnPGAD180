@@ -31,6 +31,9 @@ public class PickupInteractions : MonoBehaviour
     bool pickupBottle;
     bool spaceDown;
     bool bottleFollow;
+
+    //Sound effects//
+    public AudioSource glimpseFeedback;
     // Start is called before the first frame update
     void Start()
     {
@@ -240,6 +243,7 @@ public class PickupInteractions : MonoBehaviour
     IEnumerator StartGlimpse1()
     {
         bottleGlimpse.SetActive(true);
+        glimpseFeedback.Play();
         yield return new WaitForSeconds(5f);
         bottleGlimpse.SetActive(false);
         tutPrompts.SetActive(true);
