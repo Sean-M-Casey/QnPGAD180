@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class OpenPolterDialogue : MonoBehaviour
 {
     bool startDialogue;
+    bool showPolter;
     public GameObject player;
     public GameObject textEndIcon;
     public GameObject tutPromptBox;
@@ -28,7 +29,6 @@ public class OpenPolterDialogue : MonoBehaviour
             tutPromptBox.SetActive(false);
             tutPromptText.text = "";
             polterPad.SetTrigger("");
-            williamSuspectInfo.SetActive(true);
         }
     }
     private void OnTriggerStay(Collider other)
@@ -45,11 +45,24 @@ public class OpenPolterDialogue : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.Mouse0))
                 {
-                    StartCoroutine(Dialogue());
                     startDialogue = false;
+                    if (showPolter)
+                    {
+                        
+                        showPolter = false;
+                    }
+                    else
+                    {
+                        williamSuspectInfo.SetActive(true);
+                        StartCoroutine(Dialogue());
+                    }
                 }
             }
         }
+    }
+    public void ShowPolter()
+    {
+        showPolter = true;
     }
     IEnumerator Dialogue()
     {
