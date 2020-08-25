@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class OpenPolterDialogue : MonoBehaviour
 {
+    bool showPromptOnce;
     bool startDialogue;
     bool showPolter;
     public GameObject player;
@@ -13,6 +15,8 @@ public class OpenPolterDialogue : MonoBehaviour
     public GameObject williamSuspectInfo;
     public TextMesh tutPromptText;
     public Animator polterPad;
+    public GameObject babyBottle;
+    public UnityEvent pickBottleBack;
     // Start is called before the first frame update
     void Start()
     {
@@ -48,13 +52,21 @@ public class OpenPolterDialogue : MonoBehaviour
                     startDialogue = false;
                     if (showPolter)
                     {
-                        
+                        if (showPromptOnce)
+                        {
+                            williamSuspectInfo.SetActive(true);
+                            StartCoroutine(Dialogue());
+                        }
+                        babyBottle.GetComponent<Rigidbody>().useGravity = true;
                         showPolter = false;
                     }
                     else
                     {
-                        williamSuspectInfo.SetActive(true);
-                        StartCoroutine(Dialogue());
+                        if (showPromptOnce)
+                        {
+                            williamSuspectInfo.SetActive(true);
+                            StartCoroutine(Dialogue());
+                        }
                     }
                 }
             }

@@ -31,6 +31,7 @@ public class PickupInteractions : MonoBehaviour
     bool pickupBottle;
     bool spaceDown;
     bool bottleFollow;
+    bool pickupBabyBottleforBaby;
 
     //Sound effects//
     public AudioSource glimpseFeedback;
@@ -180,6 +181,7 @@ public class PickupInteractions : MonoBehaviour
             if (spaceDown && pickupBottle)
             {
                 StartCoroutine(PickupBottle());
+                pickupBottle = false;
             }
         }
     }
@@ -282,5 +284,9 @@ public class PickupInteractions : MonoBehaviour
     public void allowBaby()
     {
         allowBabyBottleInteract = true;
+    }
+    public void PickupBottleYes()
+    {
+        pickupBabyBottleforBaby = true;
     }
 }
