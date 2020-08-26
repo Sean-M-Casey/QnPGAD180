@@ -35,9 +35,11 @@ public class DoorScripts : MonoBehaviour
     bool eDown;
     int reEnterFoyer = 0;
     bool kitchenOnce;
+    int itemTracker;
     // Start is called before the first frame update
     void Start()
     {
+        
         e_Key.SetActive(false);
         inRoom = "Foyer";
         
@@ -46,6 +48,7 @@ public class DoorScripts : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        itemTracker = player.GetComponent<PickupInteractions>().itemsPicked;
         if (Input.GetKeyDown(KeyCode.E))
         {
             eDown = true;
@@ -59,11 +62,11 @@ public class DoorScripts : MonoBehaviour
             reEnterFoyer = 1;
             kitchenOnce = true;
         }
-        if (inRoom == "Foyer" && reEnterFoyer == 1)
+        if (inRoom == "Foyer" && reEnterFoyer == 1 && itemTracker == 2)
         {
             reEnterFoyer = 2;
         }
-        if (reEnterFoyer == 2)
+        if (reEnterFoyer == 2 && itemTracker == 2)
         {
             startCutscene2.Invoke();
             reEnterFoyer++;

@@ -26,7 +26,7 @@ public class PickupInteractions : MonoBehaviour
     public TextMesh tutText;
     public UnityEvent showPolter;
     int arrayTracker;
-    int itemsPicked= 0;
+    public int itemsPicked = 0;
     bool playOnce;
     bool allowBabyBottleInteract;
     bool fridgeFirst;
@@ -34,6 +34,7 @@ public class PickupInteractions : MonoBehaviour
     bool spaceDown;
     bool bottleFollow;
     bool pickupBabyBottleforBaby;
+    bool runPromptPositionOnce;
 
     //Sound effects//
     public AudioSource glimpseFeedback;
@@ -254,7 +255,11 @@ public class PickupInteractions : MonoBehaviour
         tutPrompts.SetActive(true);
         tutPrompt1.SetActive(true);
         tutPrompt1.transform.localScale = new Vector3(1.0934296f, 0.196026f, 0.3013142f);
-        tutText.transform.position = new Vector3(tutText.transform.position.x - 0.045f, tutText.transform.position.y, tutText.transform.position.z - 0.01f);
+        if (!runPromptPositionOnce)
+        {
+            tutText.transform.position = new Vector3(tutText.transform.position.x - 0.1f, tutText.transform.position.y, tutText.transform.position.z - 0.01f);
+            runPromptPositionOnce = true;
+        }
         tutText.text = "Glimpses are spectral hints. Flash backs to moments";
         yield return new WaitForSeconds(3f);
         tutText.text = "Press TAB to open up the polter pad on the suspects tab.";
