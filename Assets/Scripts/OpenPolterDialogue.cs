@@ -16,7 +16,7 @@ public class OpenPolterDialogue : MonoBehaviour
     public TextMesh tutPromptText;
     public Animator polterPad;
     public GameObject babyBottle;
-    public UnityEvent pickBottleBack;
+    public UnityEvent dropBottle;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,6 +58,9 @@ public class OpenPolterDialogue : MonoBehaviour
                             StartCoroutine(Dialogue());
                         }
                         babyBottle.GetComponent<Rigidbody>().useGravity = true;
+                        player.GetComponent<Rigidbody>().isKinematic = true;
+                        dropBottle.Invoke();
+                        babyBottle.GetComponent<Rigidbody>().AddForce(new Vector2(-0.5f, 0.5f));
                         showPolter = false;
                     }
                     else
@@ -81,5 +84,10 @@ public class OpenPolterDialogue : MonoBehaviour
         tutPromptBox.SetActive(true);
         tutPromptText.text = "Press TAB to open PolterPad";
         yield return new WaitForSeconds(2f);
+    }
+    IEnumerator TurnOffKinematic()
+    {
+        yield return new WaitForSeconds(1f);
+        player.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

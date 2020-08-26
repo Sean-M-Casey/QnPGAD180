@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PickupInteractions : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class PickupInteractions : MonoBehaviour
     public GameObject babyBottle;
     public GameObject player;
     public TextMesh tutText;
+    public UnityEvent showPolter;
     int arrayTracker;
     int itemsPicked= 0;
     bool playOnce;
@@ -217,6 +219,7 @@ public class PickupInteractions : MonoBehaviour
         if (spaceDown) {
             iCircles[3].SetActive(false);
             bottleFollow = true;
+            showPolter.Invoke();
         }
         else {
             StopCoroutine(PickupBottle());
@@ -288,5 +291,9 @@ public class PickupInteractions : MonoBehaviour
     public void PickupBottleYes()
     {
         pickupBabyBottleforBaby = true;
+    }
+    public void StopBottleFollow()
+    {
+        bottleFollow = false;
     }
 }
