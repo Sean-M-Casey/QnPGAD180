@@ -88,6 +88,7 @@
     <Compile Include="Assets\JMO Assets\Cartoon FX\Scripts\CFX_LightIntensityFade.cs" />
     <Compile Include="Assets\Scripts\AnimationSwapper.cs" />
     <Compile Include="Assets\Scripts\CutScene1.cs" />
+    <Compile Include="Assets\Scripts\CutScene3.cs" />
     <Compile Include="Assets\Scripts\Cutscene2.cs" />
     <Compile Include="Assets\Scripts\DoorScripts.cs" />
     <Compile Include="Assets\Scripts\GlimpseInteractions.cs" />

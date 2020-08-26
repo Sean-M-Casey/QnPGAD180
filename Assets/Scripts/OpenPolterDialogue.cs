@@ -17,6 +17,7 @@ public class OpenPolterDialogue : MonoBehaviour
     public Animator polterPad;
     public GameObject babyBottle;
     public UnityEvent dropBottle;
+    public UnityEvent startCutscene3;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,10 +59,13 @@ public class OpenPolterDialogue : MonoBehaviour
                             StartCoroutine(Dialogue());
                         }
                         babyBottle.GetComponent<Rigidbody>().useGravity = true;
+                        babyBottle.GetComponent<Rigidbody>().isKinematic = false;
                         player.GetComponent<Rigidbody>().isKinematic = true;
                         dropBottle.Invoke();
                         babyBottle.GetComponent<Rigidbody>().AddForce(new Vector2(-0.5f, 0.5f));
+                        startCutscene3.Invoke();
                         showPolter = false;
+                        
                     }
                     else
                     {
