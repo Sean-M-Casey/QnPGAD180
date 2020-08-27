@@ -124,8 +124,9 @@ public class CutScene3 : MonoBehaviour
     }
     IEnumerator RunMoan()
     {
-        //moan animation and sound
-        yield return new WaitForSeconds(1f);
+        GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", true);
+        yield return new WaitForSeconds(3f);
+        GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", false);
         textScript.chatText.text = "";
         textScript.letterDelay = textScript.letterDelayDefault;
         textBox.SetActive(true);
