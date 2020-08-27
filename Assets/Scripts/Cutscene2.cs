@@ -134,6 +134,7 @@ public class Cutscene2 : MonoBehaviour
     void Tutorial2()
     {
         //blackout animation goes here \/\/
+        GameObject.Find("CFX2_WWExplosion_C").GetComponent<ParticleSystem>().Play();
         blackScreen.SetBool("Run_Fader", true);
         StartCoroutine(TurnOffFader());
 
@@ -144,6 +145,7 @@ public class Cutscene2 : MonoBehaviour
         blackScreen.SetBool("Run_Fader", false);
         stopWatchUI.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
         stopWatchUIHandle.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
+        GameObject.Find("CFX2_WWExplosion_C").GetComponent<ParticleSystem>().Play();
         if (!finishBlackout)
         {
             textScript.chatText.text = "";

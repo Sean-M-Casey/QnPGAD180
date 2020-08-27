@@ -104,6 +104,7 @@
     <Compile Include="Assets\Scripts\PlayerCameraTrigger.cs" />
     <Compile Include="Assets\Scripts\PlayerControls.cs" />
     <Compile Include="Assets\Scripts\PolterPadScript.cs" />
+    <Compile Include="Assets\Scripts\RespawnOnTimeOut.cs" />
     <Compile Include="Assets\Scripts\RoomCheck.cs" />
     <Compile Include="Assets\Scripts\SixtySeconds.cs" />
     <Compile Include="Assets\Scripts\Test_Watching.cs" />

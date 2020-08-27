@@ -16,6 +16,7 @@ public class PolterPadScript : MonoBehaviour
     public UnityEvent triggerTimeUnPause;
     public UnityEvent mouseLock;
     public GameObject textBox;
+    public GameObject pauseMenu;
     int ppActive = 0;
     int ppPage = 0;
     //public Animator triggerPolterPad;
@@ -28,7 +29,7 @@ public class PolterPadScript : MonoBehaviour
     }
     void Update()
     {
-        if (!textBox.activeSelf)
+        if (!textBox.activeSelf && !pauseMenu.activeSelf)
         {
             if (Input.GetKeyDown(KeyCode.Tab))
             {
