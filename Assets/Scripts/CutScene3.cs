@@ -106,6 +106,7 @@ public class CutScene3 : MonoBehaviour
                 if (textTracker == 3)
                 {
                     fader.SetBool("Fade_Out", true);
+                    StartCoroutine(Quit());
                 }
             }
         }
@@ -222,5 +223,10 @@ public class CutScene3 : MonoBehaviour
         {
             StopCoroutine(SpaceHeld());
         }
+    }
+    IEnumerator Quit()
+    {
+        yield return new WaitForSeconds(2f);
+        Application.Quit();
     }
 }
