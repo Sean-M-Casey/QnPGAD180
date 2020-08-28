@@ -235,6 +235,7 @@ public class PickupInteractions : MonoBehaviour
         yield return new WaitForSeconds(3f);
         if (eDown)
         {
+            GameObject.Find("Lucille").GetComponent<Rigidbody>().isKinematic = true;
             iCircles[3].GetComponent<Animator>().SetBool("White_ClickGreen", true);
             iCircles[3].GetComponent<Animator>().SetBool("White_FadeOut", true);
             StartCoroutine(TurnOffAfterAnim());
@@ -267,6 +268,7 @@ public class PickupInteractions : MonoBehaviour
         yield return new WaitForSeconds(3f);
         tutText.text = "Hold space to take glimpse objects with you.";
         yield return new WaitForSeconds(3f);
+        GameObject.Find("Lucille").GetComponent<Rigidbody>().isKinematic = false;
         GameObject.Find("Lucille").GetComponent<PlayerControls>().canMove = true;
         tutPrompt1.transform.localScale = new Vector3(0.7834296f, 0.196026f, 0.3013142f);
         tutText.text = "";

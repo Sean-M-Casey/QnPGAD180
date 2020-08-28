@@ -11,6 +11,7 @@ public class Cutscene2 : MonoBehaviour
     public Animator blackScreen;
     public GameObject stopWatchUI;
     public GameObject stopWatchUIHandle;
+    public GameObject body;
     TextWritingScript textScript;
     public UnityEvent allowbabyBottle;
     bool finishBlackout;
@@ -36,6 +37,7 @@ public class Cutscene2 : MonoBehaviour
     {
         if (startCutscene2)
         {
+            GameObject.Find("Lucille").GetComponent<Rigidbody>().isKinematic = true;
             StartCoroutine(CutScene2());
             startCutscene2 = false;
         }
@@ -55,7 +57,6 @@ public class Cutscene2 : MonoBehaviour
             textBox.SetActive(true);
             textScript.triggerText(textTracker);
             mouseDown = false;
-            GameObject.Find("Lucille").GetComponent<PlayerControls>().canMove = false;
         }
         if (mouseDown && textTracker == 28)
         {
@@ -128,12 +129,12 @@ public class Cutscene2 : MonoBehaviour
             textScript.letterDelay = textScript.letterDelayDefault;
             textBox.SetActive(false);
             allowbabyBottle.Invoke();
-            GameObject.Find("Lucille").GetComponent<PlayerControls>().canMove = true;
+            GameObject.Find("Lucille").GetComponent<Rigidbody>().isKinematic = false;
         }
     }
     void Tutorial2()
     {
-        //blackout animation goes here \/\/
+        body.SetActive(false);
         GameObject.Find("CFX2_WWExplosion_C").GetComponent<ParticleSystem>().Play();
         blackScreen.SetBool("Run_Fader", true);
         StartCoroutine(TurnOffFader());
@@ -146,6 +147,7 @@ public class Cutscene2 : MonoBehaviour
         stopWatchUI.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
         stopWatchUIHandle.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
         GameObject.Find("CFX2_WWExplosion_C").GetComponent<ParticleSystem>().Play();
+        body.SetActive(true);
         if (!finishBlackout)
         {
             textScript.chatText.text = "";
@@ -164,7 +166,7 @@ public class Cutscene2 : MonoBehaviour
     {
         Debug.Log("please");
         textTracker = 27;
-        victoria.SetActive(true);;
+        victoria.SetActive(true);
         yield return new WaitForSeconds(2f);
         victoriaAnimationDone = true;
         victoria.SetActive(false);

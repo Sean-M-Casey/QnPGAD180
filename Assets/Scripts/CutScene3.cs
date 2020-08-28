@@ -8,6 +8,9 @@ public class CutScene3 : MonoBehaviour
     int[] iNums = {36, 37, 38, 39};
     public GameObject textBox;
     public GameObject textEndIcon;
+    public GameObject bottle;
+    public AudioSource moan;
+    public AudioSource argument;
     int textTracker = 0;
     bool mouseDown;
     bool oneKeyDown;
@@ -32,7 +35,6 @@ public class CutScene3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(textTracker);
         if (Input.GetKeyDown(KeyCode.E))
         {
             eDown = true;
@@ -96,6 +98,7 @@ public class CutScene3 : MonoBehaviour
                 {
                     tutPrompt.SetActive(true);
                     tutPromptBox.SetActive(true);
+                    tutPromptText.transform.position = new Vector3(tutPromptText.transform.position.x, tutPromptText.transform.position.y, tutPromptText.transform.position.z - 1f);
                     tutPromptText.text = "Hold ‘E’ to peer into Williams soul.";
                 }
                 if (textTracker == 3)
@@ -120,17 +123,23 @@ public class CutScene3 : MonoBehaviour
             tutPrompt.SetActive(false);
             tutPromptBox.SetActive(false);
             tutPromptText.text = "";
-            //start soul cutscene
             fader.SetBool("Run_Fader", true);
+            william.SetBool("PeerSoul", true);
+            william.SetBool("StartPo", false);
             yield return new WaitForSeconds(1f);
             fader.SetBool("Run_Fader", false);
-            floatingObjects.SetBool("William is Possessed", true);
+            floatingObjects.SetBool("William is possessed", true);
             yield return new WaitForSeconds(2f);
-            //play noise
+            argument.Play();
             yield return new WaitForSeconds(1f);
-            textTracker = 3;
-            textBox.SetActive(true);
-            textScript.triggerText(iNums[textTracker]);
+            if (!runTextOnce)
+            {
+                textScript.chatText.text = "";
+                textTracker = 3;
+                textBox.SetActive(true);
+                textScript.triggerText(iNums[textTracker]);
+                runTextOnce = true;
+            }
         }
         else
         {
@@ -142,7 +151,7 @@ public class CutScene3 : MonoBehaviour
         tutPrompt.SetActive(true);
         tutPromptBox.SetActive(true);
         tutPromptBox.transform.localScale = new Vector3(tutPromptBox.transform.localScale.x + 4, tutPromptBox.transform.localScale.y, tutPromptBox.transform.localScale.z);
-        tutPromptText.transform.position = new Vector3(tutPromptText.transform.position.x - 2, tutPromptText.transform.position.y, tutPromptText.transform.position.z + 1f);
+        tutPromptText.transform.position = new Vector3(tutPromptText.transform.position.x - 2, tutPromptText.transform.position.y, tutPromptText.transform.position.z - 1f);
         tutPromptText.text = "Lucille is a ghost, time to make her act like one. Press 1 to do her Ghost Moan.";
         yield return new WaitForSeconds(2f);
         tutPrompt.SetActive(false);
@@ -156,8 +165,10 @@ public class CutScene3 : MonoBehaviour
     }
     IEnumerator RunMoan()
     {
+        GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Cutscene_Start", true);
         textTracker = 1;
         william.SetBool("StartCry", true);
+        moan.Play();
         GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", true);
         yield return new WaitForSeconds(3f);
         GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", false);
@@ -184,7 +195,8 @@ public class CutScene3 : MonoBehaviour
     {
         if (spaceDown)
         {
-            //start animator for billys bottle
+            //start animator for billys bottle 
+            bottle.SetActive(false);
             william.SetBool("StopCry", true);
             playerCorrectSound.Play();
             yield return new WaitForSeconds(2f);
