@@ -144,7 +144,7 @@ public class DoorScripts : MonoBehaviour
             if (other.name == foyer_living.name)
             {
                 player.transform.position = living_foyer.transform.position;
-                inRoom = "Living";
+                inRoom = "LivingRoom";
                 main_camera.transform.position = cam_pos_living.transform.position;
                 eDown = false;
             }

@@ -14,6 +14,8 @@ public class Cutscene2 : MonoBehaviour
     public GameObject body;
     TextWritingScript textScript;
     public UnityEvent allowbabyBottle;
+    public GameObject timeCountdown;
+    public RespawnOnTimeOut timePause;
     bool finishBlackout;
     int textTracker;
     bool mouseDown;
@@ -123,6 +125,7 @@ public class Cutscene2 : MonoBehaviour
         }
         if (mouseDown && textTracker == 35)
         {
+            timePause.enabled = true;
             textTracker++;
             mouseDown = false;
             textScript.chatText.text = "";
@@ -138,14 +141,15 @@ public class Cutscene2 : MonoBehaviour
         GameObject.Find("CFX2_WWExplosion_C").GetComponent<ParticleSystem>().Play();
         blackScreen.SetBool("Run_Fader", true);
         StartCoroutine(TurnOffFader());
-
     }
     IEnumerator TurnOffFader()
     {
+
         yield return new WaitForSeconds(2.5f);
         blackScreen.SetBool("Run_Fader", false);
         stopWatchUI.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
         stopWatchUIHandle.GetComponent<Animator>().SetBool("Stopwatch_Unpause", true);
+        timeCountdown.SetActive(true);
         GameObject.Find("CFX2_WWExplosion_C").GetComponent<ParticleSystem>().Play();
         body.SetActive(true);
         if (!finishBlackout)
@@ -159,6 +163,7 @@ public class Cutscene2 : MonoBehaviour
     }
     public void ReEnterFoyer()
     {
+        
         startCutscene2 = true;
         Debug.Log("pleasestart");
     }

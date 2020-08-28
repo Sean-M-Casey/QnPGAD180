@@ -25,6 +25,8 @@ public class CutScene3 : MonoBehaviour
     public Animator floatingObjects;
     public Animator fader;
     public AudioSource playerCorrectSound;
+    public AudioSource babyCry;
+    public AudioSource babyDrink;
     bool runTextOnce;
     // Start is called before the first frame update
     void Start()
@@ -98,7 +100,7 @@ public class CutScene3 : MonoBehaviour
                 {
                     tutPrompt.SetActive(true);
                     tutPromptBox.SetActive(true);
-                    tutPromptText.transform.position = new Vector3(tutPromptText.transform.position.x, tutPromptText.transform.position.y, tutPromptText.transform.position.z - 1f);
+                    tutPromptText.transform.position = new Vector3(tutPromptText.transform.position.x - 0.5f, tutPromptText.transform.position.y - 0.5f, tutPromptText.transform.position.z - 1f);
                     tutPromptText.text = "Hold ‘E’ to peer into Williams soul.";
                 }
                 if (textTracker == 3)
@@ -169,6 +171,7 @@ public class CutScene3 : MonoBehaviour
         textTracker = 1;
         william.SetBool("StartCry", true);
         moan.Play();
+        babyCry.Play();
         GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", true);
         yield return new WaitForSeconds(3f);
         GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", false);
@@ -198,8 +201,11 @@ public class CutScene3 : MonoBehaviour
             //start animator for billys bottle 
             bottle.SetActive(false);
             william.SetBool("StopCry", true);
+            babyCry.Stop();
+            babyDrink.Play();
             playerCorrectSound.Play();
             yield return new WaitForSeconds(2f);
+            babyDrink.Stop();
             william.SetBool("StartPo", true);
             if (runTextOnce)
             {

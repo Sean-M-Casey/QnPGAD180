@@ -9,6 +9,8 @@ public class RespawnOnTimeOut : MonoBehaviour
     public GameObject textBox;
     public GameObject stopWatch;
     public GameObject stopWatchAlert;
+    public GameObject timerCountdown;
+    public GameObject polter;
     void Start()
     {
         
@@ -17,14 +19,15 @@ public class RespawnOnTimeOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tutPrompt1.activeSelf || tutPrompt2.activeSelf || textBox.activeSelf)
+        if (tutPrompt1.activeSelf || tutPrompt2.activeSelf || textBox.activeSelf || polter.activeSelf)
         {
-            Debug.Log("test");
+            timerCountdown.GetComponent<RestartOnTimerOUt>().runOnce = false;
             stopWatch.GetComponent<Animator>().enabled = false;
             stopWatchAlert.GetComponent<Animator>().enabled = false;
         }
         else
         {
+            timerCountdown.GetComponent<RestartOnTimerOUt>().runOnce = true;
             stopWatch.GetComponent<Animator>().enabled = true;
             stopWatchAlert.GetComponent<Animator>().enabled = true;
         }

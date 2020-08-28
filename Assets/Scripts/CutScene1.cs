@@ -39,10 +39,10 @@ public class CutScene1 : MonoBehaviour
         if (textTracker == 15 && !finishCutscene)
         {
             textScript.chatText.text = "";
-            unpauseTimer.Invoke();
             textBox.SetActive(false);
             StartCoroutine(WASDShow());
             finishCutscene = true;
+            StartCoroutine(PauseMovement());
             //textTracker++;
         }
         else if (textTracker < 15)
@@ -101,5 +101,11 @@ public class CutScene1 : MonoBehaviour
         boing.Play();
         yield return new WaitForSeconds(0.2f);
         lucilleBody.SetActive(true);
+    }
+    IEnumerator PauseMovement()
+    {
+        player.GetComponent<Rigidbody>().isKinematic = true;
+        yield return new WaitForSeconds(2f);
+        player.GetComponent<Rigidbody>().isKinematic = false;
     }
 }

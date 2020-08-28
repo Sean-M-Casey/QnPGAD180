@@ -17,6 +17,7 @@ public class PolterPadScript : MonoBehaviour
     public UnityEvent mouseLock;
     public GameObject textBox;
     public GameObject pauseMenu;
+    public GameObject timeCountdown;
     int ppActive = 0;
     int ppPage = 0;
     //public Animator triggerPolterPad;
@@ -40,7 +41,9 @@ public class PolterPadScript : MonoBehaviour
                 if (ppActive == 1)
                 {
                     Cursor.visible = false;
+
                     timer.enabled = true;
+                    timeCountdown.GetComponent<RestartOnTimerOUt>().runOnce = true;
                     timerAlert.enabled = true;
                     polterPad.SetActive(false);
                     polterPadUI.SetActive(true);
@@ -122,6 +125,7 @@ public class PolterPadScript : MonoBehaviour
     IEnumerator ActivatePP()
     {
         yield return new WaitForSeconds(0.2f);
+        timeCountdown.GetComponent<RestartOnTimerOUt>().runOnce = false;
         Cursor.visible = true;
         timer.enabled = false;
         timerAlert.enabled = false;
