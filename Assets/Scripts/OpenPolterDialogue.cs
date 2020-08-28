@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class OpenPolterDialogue : MonoBehaviour
 {
     bool showPromptOnce;
-    bool startDialogue;
+    public bool startDialogue;
     bool showPolter;
     public GameObject player;
     public GameObject textEndIcon;

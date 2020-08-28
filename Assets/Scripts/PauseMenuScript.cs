@@ -30,6 +30,7 @@ public class PauseMenuScript : MonoBehaviour
         //this If statement is setting the PauseMenu active, activating the mouse & disabling the player movement  
         if (toggle == false)
         {
+            Cursor.visible = false;
             Time.timeScale = 1;
             pauseMenu.gameObject.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
@@ -37,6 +38,7 @@ public class PauseMenuScript : MonoBehaviour
         }
         else if (toggle == true)
         {
+            Cursor.visible = true;
             Time.timeScale = 0;
             pauseMenu.gameObject.SetActive(true);
             Cursor.lockState = CursorLockMode.Confined;

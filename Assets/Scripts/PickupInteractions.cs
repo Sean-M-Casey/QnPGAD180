@@ -215,8 +215,7 @@ public class PickupInteractions : MonoBehaviour
     }
     IEnumerator PickupBottle()
     {
-        Debug.Log("Testing1");
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(0.1f);
         if (spaceDown) {
             iCircles[3].SetActive(false);
             bottleFollow = true;
@@ -257,7 +256,7 @@ public class PickupInteractions : MonoBehaviour
         tutPrompt1.transform.localScale = new Vector3(1.0934296f, 0.196026f, 0.3013142f);
         if (!runPromptPositionOnce)
         {
-            tutText.transform.position = new Vector3(tutText.transform.position.x - 0.1f, tutText.transform.position.y, tutText.transform.position.z - 0.01f);
+            tutText.transform.position = new Vector3(tutText.transform.position.x - 0.5f, tutText.transform.position.y, tutText.transform.position.z - 0.01f);
             runPromptPositionOnce = true;
         }
         tutText.text = "Glimpses are spectral hints. Flash backs to moments";

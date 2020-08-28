@@ -39,6 +39,7 @@ public class PolterPadScript : MonoBehaviour
                 }
                 if (ppActive == 1)
                 {
+                    Cursor.visible = false;
                     timer.enabled = true;
                     timerAlert.enabled = true;
                     polterPad.SetActive(false);
@@ -121,6 +122,7 @@ public class PolterPadScript : MonoBehaviour
     IEnumerator ActivatePP()
     {
         yield return new WaitForSeconds(0.2f);
+        Cursor.visible = true;
         timer.enabled = false;
         timerAlert.enabled = false;
         polterPad.SetActive(true);

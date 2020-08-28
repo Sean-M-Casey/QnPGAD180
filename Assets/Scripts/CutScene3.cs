@@ -5,7 +5,7 @@ using UnityEngine;
 public class CutScene3 : MonoBehaviour
 {
     TextWritingScript textScript;
-    int[] iNums = {36, 37, 38};
+    int[] iNums = {36, 37, 38, 39};
     public GameObject textBox;
     public GameObject textEndIcon;
     int textTracker = 0;
@@ -18,6 +18,11 @@ public class CutScene3 : MonoBehaviour
     public TextMesh tutPromptText;
     public GameObject tutPromptBox;
     public GameObject tutPrompt;
+    public Animator william;
+    public Animator floatingObjects;
+    public Animator fader;
+    public AudioSource playerCorrectSound;
+    bool runTextOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +32,7 @@ public class CutScene3 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(textTracker);
         if (Input.GetKeyDown(KeyCode.E))
         {
             eDown = true;
@@ -46,6 +52,7 @@ public class CutScene3 : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             oneKeyDown = true;
+            StartCoroutine(oneKeyOff());
         }
         else if (Input.GetKeyUp(KeyCode.Alpha1))
         {
@@ -59,32 +66,41 @@ public class CutScene3 : MonoBehaviour
         {
             mouseDown = false;
         }
+        if (textTracker == 1)
+        {
+            if (spaceDown)
+            {
+                StartCoroutine(SpaceHeld());
+            }
+        }
+        if (textTracker == 2)
+        {
+            if (eDown)
+            {
+                GameObject.Find("Baby_Circle").GetComponent<OpenPolterDialogue>().startDialogue = true;
+                StartCoroutine(PeerInSoul());
+                textBox.SetActive(false);
+            }
+        }
         if (textBox.activeSelf && textEndIcon.activeSelf && thisCutsceneActive)
         {
             if (mouseDown)
             {
                 textScript.chatText.text = "";
                 textBox.SetActive(false);
-                if (textTracker == 1)
+                if (textTracker == 0)
                 {
                     StartCoroutine(runPrompt1());
                 }
                 if (textTracker == 2)
                 {
-                    if (spaceDown)
-                    {
-                        StartCoroutine(SpaceHeld());
-                    }
-                }
-                if (textTracker == 3)
-                {
                     tutPrompt.SetActive(true);
                     tutPromptBox.SetActive(true);
                     tutPromptText.text = "Hold ‘E’ to peer into Williams soul.";
-                    if (eDown)
-                    {
-                        StartCoroutine(PeerInSoul());
-                    }
+                }
+                if (textTracker == 3)
+                {
+                    fader.SetBool("Fade_Out", true);
                 }
             }
         }
@@ -92,15 +108,29 @@ public class CutScene3 : MonoBehaviour
             StartCoroutine(RunMoan());
         }
     }
+    IEnumerator oneKeyOff()
+    {
+        yield return new WaitForSeconds(0.2f);
+        oneKeyDown = false;
+    }
     IEnumerator PeerInSoul()
     {
-        yield return new WaitForSeconds(3f);
         if (eDown)
         {
             tutPrompt.SetActive(false);
             tutPromptBox.SetActive(false);
             tutPromptText.text = "";
             //start soul cutscene
+            fader.SetBool("Run_Fader", true);
+            yield return new WaitForSeconds(1f);
+            fader.SetBool("Run_Fader", false);
+            floatingObjects.SetBool("William is Possessed", true);
+            yield return new WaitForSeconds(2f);
+            //play noise
+            yield return new WaitForSeconds(1f);
+            textTracker = 3;
+            textBox.SetActive(true);
+            textScript.triggerText(iNums[textTracker]);
         }
         else
         {
@@ -111,6 +141,8 @@ public class CutScene3 : MonoBehaviour
     {
         tutPrompt.SetActive(true);
         tutPromptBox.SetActive(true);
+        tutPromptBox.transform.localScale = new Vector3(tutPromptBox.transform.localScale.x + 4, tutPromptBox.transform.localScale.y, tutPromptBox.transform.localScale.z);
+        tutPromptText.transform.position = new Vector3(tutPromptText.transform.position.x - 2, tutPromptText.transform.position.y, tutPromptText.transform.position.z + 1f);
         tutPromptText.text = "Lucille is a ghost, time to make her act like one. Press 1 to do her Ghost Moan.";
         yield return new WaitForSeconds(2f);
         tutPrompt.SetActive(false);
@@ -124,38 +156,49 @@ public class CutScene3 : MonoBehaviour
     }
     IEnumerator RunMoan()
     {
+        textTracker = 1;
+        william.SetBool("StartCry", true);
         GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", true);
         yield return new WaitForSeconds(3f);
         GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Wavy_Arms_Bool", false);
-        textScript.chatText.text = "";
-        textScript.letterDelay = textScript.letterDelayDefault;
-        textBox.SetActive(true);
-        textScript.triggerText(iNums[textTracker]);
-        textTracker++;
+        if (!runTextOnce)
+        {
+            textScript.chatText.text = "";
+            textScript.letterDelay = textScript.letterDelayDefault;
+            textBox.SetActive(true);
+            textScript.triggerText(iNums[textTracker]);
+            runTextOnce = true;
+        }
     }
     IEnumerator RunCutscene3()
     {
+        GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Cutscene_Start", true);
         yield return new WaitForSeconds(4f);
         textScript.chatText.text = "";
         textScript.letterDelay = textScript.letterDelayDefault;
         textBox.SetActive(true);
         textScript.triggerText(iNums[textTracker]);
-        textTracker++;
         thisCutsceneActive = true;
     }
     IEnumerator SpaceHeld()
     {
-        yield return new WaitForSeconds(3f);
         if (spaceDown)
         {
             //start animator for billys bottle
-
+            william.SetBool("StopCry", true);
+            playerCorrectSound.Play();
             yield return new WaitForSeconds(2f);
-            textScript.chatText.text = "";
-            textScript.letterDelay = textScript.letterDelayDefault;
-            textBox.SetActive(true);
-            textScript.triggerText(iNums[textTracker]);
-            textTracker++;
+            william.SetBool("StartPo", true);
+            if (runTextOnce)
+            {
+                textTracker = 2;
+                textScript.chatText.text = "";
+                textScript.letterDelay = textScript.letterDelayDefault;
+                textBox.SetActive(true);
+                textScript.triggerText(iNums[textTracker]);
+                runTextOnce = false;
+            }
+            GameObject.Find("Lucille").GetComponent<Animator>().SetBool("Cutscene_Start", false);
         }
         else
         {
